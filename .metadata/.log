@@ -10,3 +10,15 @@ Command-line arguments:  -data C:\Team537Code\SwerveCode -os win32 -ws win32 -ar
 
 !ENTRY com.windriver.ide.target 1 0 2014-10-30 16:48:07.845
 !MESSAGE Connected to dfwserver at 127.0.0.1, 127.0.0.1:63037, PID=1356, Session="dfw-wb301-code06"
+!SESSION 2014-10-30 16:57:57.534 -----------------------------------------------
+eclipse.buildId=20080514-1211
+java.version=1.5.0_11
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -data C:\Team537Code\SwerveCode -os win32 -ws win32 -arch x86
+
+!ENTRY com.windriver.ide.target 1 0 2014-10-30 16:58:13.442
+!MESSAGE C:\WindRiver\workbench-3.0\dfw\0199bb\x86-win32\bin\dfwserver.exe  -protocol mi -io sockets -useregistry -session dfw-wb301-code06 -registryhost localhost
+
+!ENTRY com.windriver.ide.target 1 0 2014-10-30 16:58:14.363
+!MESSAGE Connected to dfwserver at 127.0.0.1, 127.0.0.1:63586, PID=5756, Session="dfw-wb301-code06"
