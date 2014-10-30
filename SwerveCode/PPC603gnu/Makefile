@@ -31,8 +31,8 @@ else
 MODE_DIR := NonDebug
 endif
 OBJ_DIR := .
-PRJ_ROOT_DIR := C:/Team537Code/RobotCode/SwerveCode
-WS_ROOT_DIR := C:/Team537Code/RobotCode
+PRJ_ROOT_DIR := C:/Team537Code/SwerveCode/SwerveCode
+WS_ROOT_DIR := C:/Team537Code/SwerveCode
 
 
 
@@ -158,15 +158,15 @@ SimpleTemplate_partialImage/$(MODE_DIR)/% : LIBPATH =
 SimpleTemplate_partialImage/$(MODE_DIR)/% : LIBS = 
 SimpleTemplate_partialImage/$(MODE_DIR)/% : OBJ_DIR := SimpleTemplate_partialImage/$(MODE_DIR)
 
-SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/CompressorManager.o : C:/Team537Code/RobotCode/SwerveCode/CompressorManager.cpp
+SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/CompressorManager.o : C:/Team537Code/SwerveCode/SwerveCode/CompressorManager.cpp
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/MyRobot.o : C:/Team537Code/RobotCode/SwerveCode/MyRobot.cpp
+SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/MyRobot.o : C:/Team537Code/SwerveCode/SwerveCode/MyRobot.cpp
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/Swerve.o : C:/Team537Code/RobotCode/SwerveCode/Swerve.cpp
+SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/Swerve.o : C:/Team537Code/SwerveCode/SwerveCode/Swerve.cpp
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
