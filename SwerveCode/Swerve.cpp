@@ -93,10 +93,10 @@ void Swerve::Ramping() {
 }
 void Swerve::SetWheelSpeed()
 {
-	SFL.Set(FrontLeftOldSpeed);
+	//SFL.Set(FrontLeftOldSpeed);
 	SFR.Set(FrontRightOldSpeed);
-	SBL.Set(BackLeftOldSpeed);
-	SBR.Set(BackRightOldSpeed);
+	//SBL.Set(BackLeftOldSpeed);
+	//SBR.Set(BackRightOldSpeed);
 }
 float Swerve::Sign(float InputSign) {
 	if (InputSign > 0) {
@@ -108,10 +108,15 @@ float Swerve::Sign(float InputSign) {
 	return 0;
 }
 void Swerve::FindAngle(){
-	FLAng = atan2(B,D)*180/PI;
-	FRAng = atan2(B,C)*180/PI;
-	BLAng = atan2(A,D)*180/PI;
-	BRAng = atan2(A,C)*180/PI;
+	FLAng = (atan2(B,D)*180/PI)+180;
+	FRAng = (atan2(B,C)*180/PI)+180;
+	BLAng = (atan2(A,D)*180/PI)+180;
+	BRAng = (atan2(A,C)*180/PI)+180;
+	SmartDashboard::PutNumber("Front Left Angle", FLAng);
+	SmartDashboard::PutNumber("Front Right Angle", FRAng);
+	SmartDashboard::PutNumber("Back Left Angle", BLAng);
+	SmartDashboard::PutNumber("Back Right Angle", BRAng);
+	SmartDashboard::PutNumber("Test 1", 21);
 }
 
 void Swerve::SetAngle(){
@@ -131,4 +136,23 @@ void Swerve::SetAngle(){
 		ABR.Set(0);
 	if (BackLeftAngle.OnTarget())
 		ABL.Set(0);
+	SmartDashboard::PutNumber("Front Right pot Error", FrontRightAngle.GetError());
+	SmartDashboard::PutNumber("Back Right pot Error", BackRightAngle.GetError());
+	SmartDashboard::PutNumber("Front Left pot Error", FrontLeftAngle.GetError());
+	SmartDashboard::PutNumber("Back Left pot Error", BackLeftAngle.GetError());
+	SmartDashboard::PutNumber("Front Pot Value", FRPot.PIDGet());
+	SmartDashboard::PutNumber("Front Right Angle Set", FRAng);
+	SmartDashboard::PutNumber("Back Right Angle Set", BRAng);
+	SmartDashboard::PutNumber("Front Left Angle Set", FLAng);
+	SmartDashboard::PutNumber("Back Left Angle Set", BLAng);
+	SmartDashboard::PutNumber("Test 6094", 537);
+	//SmartDashboard::PutData("Front Left Angle PID", &FrontLeftAngle);
+	//SmartDashboard::PutData("Back Right Angle PID", &BackRightAngle);
+	SmartDashboard::PutNumber("Gyro angle", gyro.GetAngle());
+	//SmartDashboard::PutData("Gyro Object", &gyro);
+	//SmartDashboard::PutData("Back Right pot", &BRPot);
+	//SmartDashboard::PutData("Front Right Angle PID", &FrontRightAngle);
+	//SmartDashboard::PutData("Front Right pot", &FRPot);
+	SmartDashboard::PutNumber("Front Right Min", FRPot.getmin());
+	SmartDashboard::PutNumber("Front Right Max", FRPot.getmax());
 }

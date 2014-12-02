@@ -9,7 +9,6 @@ private:
 	Joystick Controller;
 	CompressorManager Comp;
 	Swerve Sdrive;
-	
 public:
 	RobotDemo(void):
 		Controller(CONTROLLER)
@@ -27,7 +26,14 @@ public:
 		while (IsOperatorControl())
 		{
 			//Comp.checkCompressor();
-			Sdrive.SetVariables( Controller.GetMagnitude(),  Controller.GetDirectionRadians(),  Controller.GetTwist());
+			SmartDashboard::PutNumber("Controller Angle", (Controller.GetDirectionRadians()*(180/PI)));
+			Sdrive.SetVariables( Controller.GetMagnitude(),  Controller.GetDirectionRadians(),  Controller.GetRawAxis(ZAXIS));
+			Sdrive.FindWheelSpeed();
+			Sdrive.Sort();
+			Sdrive.Ramping();
+			//Sdrive.SetWheelSpeed();
+			Sdrive.FindAngle();
+			Sdrive.SetAngle();
 		}
 	}
 	

@@ -19,6 +19,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -29,25 +30,55 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33">
 <part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor focus="true" id="com.windriver.ide.devcenter.internal.DevCenterEditor" name="Dev Center" partName="Getting Started Resources" title="Getting Started Resources" tooltip="" workbook="DefaultEditorWorkbook">
-<input factoryID="com.windriver.ide.devcenter.internal.DevCenterEditorInputFactory"/>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="Swerve.cpp" partName="Swerve.cpp" path="C:/Team537Code/SwerveCode/SwerveCode/Swerve.cpp" title="Swerve.cpp" tooltip="SwerveCode/Swerve.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SwerveCode/Swerve.cpp"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="4072"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="MyRobot.cpp" partName="MyRobot.cpp" path="C:/Team537Code/SwerveCode/SwerveCode/MyRobot.cpp" title="MyRobot.cpp" tooltip="SwerveCode/MyRobot.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SwerveCode/MyRobot.cpp"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="807"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Swerve.h" partName="Swerve.h" path="C:/Team537Code/SwerveCode/SwerveCode/Swerve.h" title="Swerve.h" tooltip="SwerveCode/Swerve.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SwerveCode/Swerve.h"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="2060"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Schematic.h" partName="Schematic.h" path="C:/Team537Code/SwerveCode/SwerveCode/Schematic.h" title="Schematic.h" tooltip="SwerveCode/Schematic.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SwerveCode/Schematic.h"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="1114"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Potentiometerthreesixty.h" partName="Potentiometerthreesixty.h" path="C:/Team537Code/SwerveCode/SwerveCode/Potentiometerthreesixty.h" title="Potentiometerthreesixty.h" tooltip="SwerveCode/Potentiometerthreesixty.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SwerveCode/Potentiometerthreesixty.h"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="340"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Potentiometerthreesixty.cpp" partName="Potentiometerthreesixty.cpp" path="C:/Team537Code/SwerveCode/SwerveCode/Potentiometerthreesixty.cpp" title="Potentiometerthreesixty.cpp" tooltip="SwerveCode/Potentiometerthreesixty.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SwerveCode/Potentiometerthreesixty.cpp"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="443"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="CompressorManager.h" partName="CompressorManager.h" path="C:/Team537Code/SwerveCode/SwerveCode/CompressorManager.h" title="CompressorManager.h" tooltip="SwerveCode/CompressorManager.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SwerveCode/CompressorManager.h"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="0"/>
 </editor>
 </editors>
 <views>
+<view id="com.windriver.ide.debug.ui.osobjects.KOView" partName="Kernel Objects"/>
 <view id="biz.junginger.newsfeed.eclipse.FeedView" partName="Feeds">
 <viewState/>
 </view>
-<view id="com.windriver.ide.debug.ui.osobjects.KOView" partName="Kernel Objects"/>
 <view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
 <view id="com.windriver.ide.ui.project.WRFileView" partName="File Navigator"/>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
-<view id="org.eclipse.ui.console.ConsoleView" partName="Console"/>
 <view id="org.eclipse.rse.ui.view.systemView" partName="Remote Systems">
 <viewState horizontalPosition="0" linkWithEditor="f" release="2.0.0" showFilterPools="f" verticalPosition="0">
 <expanded>
@@ -58,6 +89,7 @@
 </selection>
 </viewState>
 </view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console"/>
 <view id="com.windriver.ide.ui.build.WRBuildConsoleView" partName="Build Console">
 <viewState>
 <buildArgsViewState traceBuildRun="true">
@@ -70,9 +102,17 @@
 <viewState CommonNavigator.LINKING_ENABLED="0" CommonNavigator.LINKING_ENABLED.delayed="0" org.eclipse.cdt.ui.cview.groupincludes="true" org.eclipse.cdt.ui.editor.CUChildren="false" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
 </view>
 <view id="org.eclipse.pde.runtime.LogView" partName="Error Log"/>
-<view id="org.eclipse.ui.views.ProblemView" partName="Problems"/>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState columnWidth0="250" columnWidth1="75" columnWidth2="150" columnWidth3="60" columnWidth4="0" horizontalPosition="0" verticalPosition="0">
+<columnOrder columnOrderIndex="0"/>
+<columnOrder columnOrderIndex="1"/>
+<columnOrder columnOrderIndex="2"/>
+<columnOrder columnOrderIndex="3"/>
+<columnOrder columnOrderIndex="4"/>
+</viewState>
+</view>
 </views>
-<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="com.windriver.ide.perspective.ADE">
+<perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="com.windriver.ide.perspective.ADE">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.windriver.ide.ui.ADEPerspectiveFactory" id="com.windriver.ide.perspective.ADE" label="Application Development"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -168,8 +208,6 @@
 <perspective_action id="com.windriver.scopetools.profilescope.perspective.ProfileScopePerspective"/>
 <view id="org.eclipse.ui.navigator.ProjectExplorer"/>
 <view id="com.windriver.ide.ui.project.WRFileView"/>
-<view id="org.eclipse.rse.ui.view.systemView"/>
-<view id="com.windriver.ide.debug.ui.osobjects.KOView"/>
 <view id="biz.junginger.newsfeed.eclipse.FeedView"/>
 <view id="org.eclipse.pde.runtime.LogView"/>
 <view id="org.eclipse.ui.views.TaskList"/>
@@ -177,8 +215,15 @@
 <view id="org.eclipse.ui.views.PropertySheet"/>
 <view id="com.windriver.ide.ui.build.WRBuildConsoleView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
-<view id="org.eclipse.ui.views.ContentOutline"/>
-<fastViewBars/>
+<view id="org.eclipse.rse.ui.view.systemView"/>
+<view id="com.windriver.ide.debug.ui.osobjects.KOView"/>
+<fastViewBars>
+<fastViewBar fastViewLocation="131072" id="right" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
+<fastViews>
+<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
 <layout>
 <mainWindow>
 <info folder="true" part="left">
@@ -201,7 +246,7 @@
 <presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.26972625" ratioLeft="335" ratioRight="907" relationship="2" relative="left"/>
+<info part="org.eclipse.ui.editorss" ratio="0.16490965" ratioLeft="219" ratioRight="1109" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.72878534" ratioLeft="438" ratioRight="163" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="com.windriver.ide.ui.build.WRBuildConsoleView" appearance="2" expanded="2">
 <page content="biz.junginger.newsfeed.eclipse.FeedView" label="Feeds"/>
@@ -223,11 +268,9 @@
 </folder>
 </info>
 <info folder="true" part="right" ratio="0.7298787" ratioLeft="662" ratioRight="245" relationship="2" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
-<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33">
-<part id="0"/>
-</presentation>
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33"/>
 </folder>
 </info>
 <info folder="true" part="leftbottom" ratio="0.59900165" ratioLeft="360" ratioRight="241" relationship="4" relative="left">
@@ -247,15 +290,176 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="com.windriver.ide.devcenter.internal.DevCenterEditorInputFactory" id="com.windriver.ide.devcenter.internal.DevCenterEditor"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/SwerveCode/Swerve.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/SwerveCode/Swerve.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/SwerveCode/Schematic.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/SwerveCode/MyRobot.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/SwerveCode/Potentiometerthreesixty.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/SwerveCode/Potentiometerthreesixty.h"/>
 </editors>
-<item active="true" historyLabel="Getting Started Resources" index="0"/>
+<item historyLabel="MyRobot.cpp" index="3">
+<position info="not_deleted" x="703" y="0"/>
+</item>
+<item historyLabel="Swerve.cpp" index="0">
+<position info="not_deleted" x="4665" y="0"/>
+</item>
+<item historyLabel="MyRobot.cpp" index="3">
+<position info="not_deleted" x="703" y="0"/>
+</item>
+<item historyLabel="Swerve.h" index="1">
+<position info="not_deleted" x="1981" y="0"/>
+</item>
+<item historyLabel="Schematic.h" index="2">
+<position info="not_deleted" x="1093" y="0"/>
+</item>
+<item historyLabel="MyRobot.cpp" index="3">
+<position info="not_deleted" x="807" y="0"/>
+</item>
+<item historyLabel="Swerve.cpp" index="0">
+<position/>
+</item>
+<item historyLabel="Schematic.h" index="2">
+<position info="not_deleted" x="1093" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.cpp" index="4">
+<position info="not_deleted" x="293" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.h" index="5">
+<position info="not_deleted" x="115" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.cpp" index="4">
+<position info="not_deleted" x="293" y="0"/>
+</item>
+<item historyLabel="Swerve.cpp" index="0">
+<position/>
+</item>
+<item historyLabel="Swerve.h" index="1">
+<position info="not_deleted" x="1981" y="0"/>
+</item>
+<item historyLabel="Schematic.h" index="2">
+<position info="not_deleted" x="1134" y="0"/>
+</item>
+<item historyLabel="Swerve.cpp" index="0">
+<position info="not_deleted" x="4178" y="0"/>
+</item>
+<item historyLabel="Schematic.h" index="2">
+<position info="not_deleted" x="36" y="0"/>
+</item>
+<item historyLabel="Swerve.cpp" index="0">
+<position info="not_deleted" x="3110" y="0"/>
+</item>
+<item historyLabel="Swerve.h" index="1">
+<position info="not_deleted" x="1490" y="0"/>
+</item>
+<item historyLabel="Swerve.cpp" index="0">
+<position info="not_deleted" x="3372" y="0"/>
+</item>
+<item historyLabel="Schematic.h" index="2">
+<position info="not_deleted" x="36" y="0"/>
+</item>
+<item historyLabel="Swerve.cpp" index="0">
+<position info="not_deleted" x="982" y="44"/>
+</item>
+<item historyLabel="Swerve.h" index="1">
+<position info="not_deleted" x="1490" y="0"/>
+</item>
+<item historyLabel="Schematic.h" index="2">
+<position info="not_deleted" x="1114" y="0"/>
+</item>
+<item historyLabel="MyRobot.cpp" index="3">
+<position info="not_deleted" x="807" y="0"/>
+</item>
+<item historyLabel="Swerve.h" index="1">
+<position info="not_deleted" x="2033" y="0"/>
+</item>
+<item historyLabel="Swerve.cpp" index="0">
+<position info="not_deleted" x="4921" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.h" index="5">
+<position info="not_deleted" x="376" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.cpp" index="4">
+<position info="not_deleted" x="513" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.h" index="5">
+<position info="not_deleted" x="340" y="0"/>
+</item>
+<item historyLabel="Schematic.h" index="2">
+<position info="not_deleted" x="1114" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.h" index="5">
+<position info="not_deleted" x="340" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.cpp" index="4">
+<position info="not_deleted" x="461" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.h" index="5">
+<position info="not_deleted" x="376" y="0"/>
+</item>
+<item historyLabel="Swerve.cpp" index="0">
+<position info="not_deleted" x="4921" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.cpp" index="4">
+<position info="not_deleted" x="461" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.h" index="5">
+<position info="not_deleted" x="376" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.cpp" index="4">
+<position info="not_deleted" x="513" y="0"/>
+</item>
+<item historyLabel="Swerve.cpp" index="0">
+<position info="not_deleted" x="4855" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.cpp" index="4">
+<position info="not_deleted" x="513" y="0"/>
+</item>
+<item historyLabel="Swerve.cpp" index="0">
+<position info="not_deleted" x="4855" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.h" index="5">
+<position info="not_deleted" x="340" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.cpp" index="4">
+<position info="not_deleted" x="513" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.cpp" index="4">
+<position info="not_deleted" x="698" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.h" index="5">
+<position info="not_deleted" x="340" y="0"/>
+</item>
+<item historyLabel="Swerve.cpp" index="0">
+<position info="not_deleted" x="4917" y="0"/>
+</item>
+<item historyLabel="Potentiometerthreesixty.cpp" index="4">
+<position info="not_deleted" x="443" y="0"/>
+</item>
+<item historyLabel="Swerve.cpp" index="0">
+<position info="not_deleted" x="224" y="72"/>
+</item>
+<item historyLabel="MyRobot.cpp" index="3">
+<position info="not_deleted" x="807" y="0"/>
+</item>
+<item historyLabel="Swerve.h" index="1">
+<position info="not_deleted" x="2060" y="0"/>
+</item>
+<item active="true" historyLabel="Swerve.cpp" index="0">
+<position info="not_deleted" x="224" y="72"/>
+</item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="left"/>
+<trimItem IMemento.internal.id="leftbottom"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="right"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -264,8 +468,31 @@
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.HeapStatus"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottom"/>
 </trimArea>
 </trimLayout>
 </window>
-<mruList/>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="CompressorManager.h" tooltip="SwerveCode/CompressorManager.h">
+<persistable path="/SwerveCode/CompressorManager.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Potentiometerthreesixty.cpp" tooltip="SwerveCode/Potentiometerthreesixty.cpp">
+<persistable path="/SwerveCode/Potentiometerthreesixty.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Potentiometerthreesixty.h" tooltip="SwerveCode/Potentiometerthreesixty.h">
+<persistable path="/SwerveCode/Potentiometerthreesixty.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Schematic.h" tooltip="SwerveCode/Schematic.h">
+<persistable path="/SwerveCode/Schematic.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Swerve.h" tooltip="SwerveCode/Swerve.h">
+<persistable path="/SwerveCode/Swerve.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="MyRobot.cpp" tooltip="SwerveCode/MyRobot.cpp">
+<persistable path="/SwerveCode/MyRobot.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Swerve.cpp" tooltip="SwerveCode/Swerve.cpp">
+<persistable path="/SwerveCode/Swerve.cpp"/>
+</file>
+</mruList>
 </workbench>

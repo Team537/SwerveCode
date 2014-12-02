@@ -3,13 +3,15 @@
 #include "Schematic.h"
 #include "cmath"
 #include "WPILib.h"
+#include "PotentiometerThreeSixty.h"
 
 class Swerve
 {
 	
 	Victor SFR, SFL, SBR, SBL, AFR, AFL, ABR, ABL;
 	Encoder FREnc, FLEnc, BREnc, BLEnc;
-	AnalogChannel FRPot, FLPot, BRPot, BLPot; 
+	PotentiometerThreeSixty FRPot, FLPot, BRPot, BLPot; 
+	Gyro gyro;
 	float A, B, C, D, Ratio, frontrspeed, backrspeed, frontlspeed, backlspeed, FRAng, FLAng, BRAng, BLAng;
 	float deadband, deadbandrad;
 	PIDController FrontRightAngle, FrontLeftAngle, BackRightAngle, BackLeftAngle, FrontRightSpeed, FrontLeftSpeed, BackRightSpeed, BackLeftSpeed;
@@ -30,24 +32,35 @@ public:
 		FLPot(FL_ANGLE_POT),
 		BRPot(BR_ANGLE_POT),
 		BLPot(BL_ANGLE_POT),
+		gyro (GYRO),
 		FREnc(FR_DRIVE_ENCODER,true,CounterBase::k4X),
 		FLEnc(FL_DRIVE_ENCODER,true,CounterBase::k4X),
 		BREnc(BR_DRIVE_ENCODER,true,CounterBase::k4X),
 		BLEnc(BL_DRIVE_ENCODER,true,CounterBase::k4X),
-		FrontRightAngle(AFR_P, 0, .01, &FRPot, &AFR),
-		FrontLeftAngle(AFL_P, 0, .01, &FLPot, &AFL),
-		BackRightAngle(ABR_P, 0, .01, &BRPot, &ABR),
-		BackLeftAngle(ABL_P, 0, .01, &BLPot, &ABL),
+		FrontRightAngle(AFR_P, 0, .1, &FRPot, &AFR),
+		FrontLeftAngle(AFL_P, 0, .1, &FLPot, &AFL),
+		BackRightAngle(ABR_P, 0, .15, &BRPot, &ABR),
+		BackLeftAngle(ABL_P, 0, .1, &BLPot, &ABL),
 		FrontRightSpeed(SFR_P, 0, .01, &FREnc, &SFR),
 		FrontLeftSpeed(SFL_P, 0, .01, &FLEnc, &SFL),
 		BackRightSpeed(SBR_P, 0, .01, &BREnc, &SBR),
 		BackLeftSpeed(SBL_P, 0, .01, &BLEnc, &SBL)
 	{
-		deadband = .05;
+		deadband = .1;
 		deadbandrad = (PI / 15);
+		BackRightAngle.SetAbsoluteTolerance(30);
+		FrontLeftAngle.SetAbsoluteTolerance(30);
+		FrontRightAngle.SetAbsoluteTolerance(30);
+		BackLeftAngle.SetAbsoluteTolerance(30);
+		BackRightAngle.SetOutputRange(-.2,.2);
+		FrontRightAngle.SetOutputRange(-.2,.2);
+		FrontLeftAngle.SetOutputRange(-.2,.2);
+		BackLeftAngle.SetOutputRange(-.2,.2);
+		BackRightAngle.SetContinuous(true);
+		BackLeftAngle.SetContinuous(true);
+		FrontLeftAngle.SetContinuous(true);
+		FrontRightAngle.SetContinuous(true);
 	}
-private:
-	float frontrdif, backrdif, frontldif, backldif, FrontLeftOldSpeed, FrontRightOldSpeed, BackLeftOldSpeed, BackRightOldSpeed;
 	void Ramping();
 	void FindWheelSpeed();
 	void Sort();
@@ -55,6 +68,9 @@ private:
 	float Sign(float InputSign);
 	void FindAngle();
 	void SetAngle();
+private:
+	float frontrdif, backrdif, frontldif, backldif, FrontLeftOldSpeed, FrontRightOldSpeed, BackLeftOldSpeed, BackRightOldSpeed;
+
 };
 
 #endif

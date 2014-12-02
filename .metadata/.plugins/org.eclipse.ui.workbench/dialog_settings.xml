@@ -7,4 +7,8 @@
 			<item value="com.windriver.ide.VxWorks"/>
 		</list>
 	</section>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="311"/>
+		<item key="DIALOG_Y_ORIGIN" value="8"/>
+	</section>
 </section>

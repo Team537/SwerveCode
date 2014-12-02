@@ -166,12 +166,17 @@ SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/MyRobot.o : C:/Team53
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/Potentiometerthreesixty.o : C:/Team537Code/SwerveCode/SwerveCode/Potentiometerthreesixty.cpp
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/Swerve.o : C:/Team537Code/SwerveCode/SwerveCode/Swerve.cpp
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
 OBJECTS_SimpleTemplate_partialImage = SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/CompressorManager.o \
 	 SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/MyRobot.o \
+	 SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/Potentiometerthreesixty.o \
 	 SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/Swerve.o
 
 SimpleTemplate_partialImage/$(MODE_DIR)/SimpleTemplate_partialImage.o : $(OBJECTS_SimpleTemplate_partialImage)
@@ -184,7 +189,8 @@ _clean :: SimpleTemplate_partialImage/$(MODE_DIR)/SimpleTemplate_partialImage_cl
 SimpleTemplate_partialImage/$(MODE_DIR)/SimpleTemplate_partialImage_clean : 
 	$(TRACE_FLAG)if [ -d "SimpleTemplate_partialImage" ]; then cd "SimpleTemplate_partialImage"; rm -rf $(MODE_DIR); fi
 
-DEP_FILES := SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/CompressorManager.d SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/MyRobot.d SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/Swerve.d
+DEP_FILES := SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/CompressorManager.d SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/MyRobot.d SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/Potentiometerthreesixty.d \
+	 SimpleTemplate_partialImage/$(MODE_DIR)/Objects/SwerveCode/Swerve.d
 -include $(DEP_FILES)
 
 
