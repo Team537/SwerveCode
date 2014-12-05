@@ -2,7 +2,7 @@
 #include "WPILib.h"
 #include "Schematic.h"
 
-PotentiometerThreeSixty::PotentiometerThreeSixty(uint8_t moduleNumber, uint32_t channel)
+PotentiometerThreeSixty::PotentiometerThreeSixty(uint8_t moduleNumber, uint32_t channel, double max, double min, double convert)
 	: AnalogChannel(moduleNumber, channel){
 	vmin = 2;
 	vmax = 2;

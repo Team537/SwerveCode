@@ -8,7 +8,7 @@
 class PotentiometerThreeSixty : public AnalogChannel
 {
 	public:
-		PotentiometerThreeSixty(uint8_t moduleNumber, uint32_t channel);
+		PotentiometerThreeSixty(uint8_t moduleNumber, uint32_t channel, double max, double min, double convert);
 		double PIDGet();
 		double getmax();
 		double getmin();

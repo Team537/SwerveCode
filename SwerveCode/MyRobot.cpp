@@ -33,7 +33,8 @@ public:
 			Sdrive.Ramping();
 			//Sdrive.SetWheelSpeed();
 			Sdrive.FindAngle();
-			Sdrive.SetAngle();
+			Sdrive.SetpointToggle(Controller.GetRawButton(1));
+			//Sdrive.SetAngle();
 		}
 	}
 	

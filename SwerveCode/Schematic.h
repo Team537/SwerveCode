@@ -41,10 +41,10 @@
 
 
 //Analog Inputs
-#define FL_ANGLE_POT 1,5
+#define FL_ANGLE_POT 1,6
 #define FR_ANGLE_POT 1,4
 #define BR_ANGLE_POT 1,3
-#define BL_ANGLE_POT 1,6
+#define BL_ANGLE_POT 1,5
 
 //Anolog Outputs
 #define GYRO 1,1
@@ -54,10 +54,10 @@
 #define ZAXIS 3
 
 //PID
-#define AFL_P .00001
-#define AFR_P .00001
-#define ABL_P .000001
-#define ABR_P .000001
+#define AFL_P -.0024
+#define AFR_P .0004
+#define ABL_P .00001
+#define ABR_P .00001
 #define SFL_P .001
 #define SFR_P .001
 #define SBL_P .001

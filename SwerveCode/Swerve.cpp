@@ -119,15 +119,47 @@ void Swerve::FindAngle(){
 	SmartDashboard::PutNumber("Test 1", 21);
 }
 
+void Swerve::SetpointToggle(int trigger)
+{
+	FrontLeftAngle.Enable();
+	/*if(trigger == 1 && lasttrigger == 0){
+		if(toggle == true)
+		{
+			toggle = false;
+			FrontRightAngle.SetSetpoint(700);
+		}
+		else
+		{
+			toggle =true;
+			FrontRightAngle.SetSetpoint(400);
+		}
+	}
+	lasttrigger = trigger;*/
+	if (trigger == 1){
+		FrontLeftAngle.SetSetpoint(300);
+	}
+	else
+		FrontLeftAngle.SetSetpoint(500);
+
+	SmartDashboard::PutNumber("Front Right input", FLPot.PIDGet());
+	SmartDashboard::PutNumber("Front Right output", AFL.Get());
+	SmartDashboard::PutNumber("Front Right Error", FrontLeftAngle.GetError());
+	SmartDashboard::PutNumber("Front Right input 2", FLPot.PIDGet());
+	SmartDashboard::PutNumber("Front Right output 2", AFL.Get());
+	SmartDashboard::PutNumber("Front Right Error 2", FrontLeftAngle.GetError());
+	SmartDashboard::PutNumber("setpoint", FrontLeftAngle.GetSetpoint());
+	SmartDashboard::PutBoolean("PID Target", FrontLeftAngle.OnTarget());
+}
+
 void Swerve::SetAngle(){
 	FrontRightAngle.Enable();
-	FrontRightAngle.SetSetpoint(FRAng);
-	FrontLeftAngle.Enable();
+	FrontRightAngle.SetSetpoint(700);
+	/*FrontLeftAngle.Enable();
 	FrontLeftAngle.SetSetpoint(FLAng);
 	BackRightAngle.Enable();
 	BackRightAngle.SetSetpoint(BRAng);
 	BackLeftAngle.Enable();
-	BackLeftAngle.SetSetpoint(BLAng);
+	BackLeftAngle.SetSetpoint(BLAng);*/
 	if (FrontRightAngle.OnTarget())
 		AFR.Set(0);
 	if (FrontLeftAngle.OnTarget())
@@ -136,23 +168,7 @@ void Swerve::SetAngle(){
 		ABR.Set(0);
 	if (BackLeftAngle.OnTarget())
 		ABL.Set(0);
-	SmartDashboard::PutNumber("Front Right pot Error", FrontRightAngle.GetError());
-	SmartDashboard::PutNumber("Back Right pot Error", BackRightAngle.GetError());
-	SmartDashboard::PutNumber("Front Left pot Error", FrontLeftAngle.GetError());
-	SmartDashboard::PutNumber("Back Left pot Error", BackLeftAngle.GetError());
-	SmartDashboard::PutNumber("Front Pot Value", FRPot.PIDGet());
-	SmartDashboard::PutNumber("Front Right Angle Set", FRAng);
-	SmartDashboard::PutNumber("Back Right Angle Set", BRAng);
-	SmartDashboard::PutNumber("Front Left Angle Set", FLAng);
-	SmartDashboard::PutNumber("Back Left Angle Set", BLAng);
-	SmartDashboard::PutNumber("Test 6094", 537);
-	//SmartDashboard::PutData("Front Left Angle PID", &FrontLeftAngle);
-	//SmartDashboard::PutData("Back Right Angle PID", &BackRightAngle);
-	SmartDashboard::PutNumber("Gyro angle", gyro.GetAngle());
-	//SmartDashboard::PutData("Gyro Object", &gyro);
-	//SmartDashboard::PutData("Back Right pot", &BRPot);
-	//SmartDashboard::PutData("Front Right Angle PID", &FrontRightAngle);
-	//SmartDashboard::PutData("Front Right pot", &FRPot);
-	SmartDashboard::PutNumber("Front Right Min", FRPot.getmin());
-	SmartDashboard::PutNumber("Front Right Max", FRPot.getmax());
+	SmartDashboard::PutNumber("Front Right input", FRPot.PIDGet());
+	SmartDashboard::PutNumber("Front Right output", AFR.Get());
+	SmartDashboard::PutNumber("Front Right Error", FrontRightAngle.GetError());
 }
