@@ -14,8 +14,7 @@ public:
 		Controller(CONTROLLER)
 	{
 	
-	}
-
+	} 
 	void Autonomous()
 	{
 		
@@ -35,6 +34,7 @@ public:
 			Sdrive.FindAngle();
 			Sdrive.SetpointToggle(Controller.GetRawButton(1));
 			//Sdrive.SetAngle();
+			Sdrive.init();
 		}
 	}
 	

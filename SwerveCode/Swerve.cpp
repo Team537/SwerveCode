@@ -3,7 +3,27 @@
 #include "cmath"
 #include "WPILib.h"
 
+void Swerve::init(void){
+	static bool bFirstTime = true;
+	AFL.Set(.1);
+	inittimer.Start();
+	if (inittimer.Get() >= 4){
+		inittimer.Stop();
+		AFL.Set(0);
+		bFirstTime = false;
+	}
+	SmartDashboard::PutNumber("timer", inittimer.Get());
+}
+
 void Swerve::SetVariables(float Magnitude, float DirectionRadians, float Twist){
+	static bool b_minmaxset = false;
+
+	if (!b_minmaxset)
+		{
+		FLPot.SetMinMax(0.2, 0.4);
+		b_minmaxset = true;
+		}
+	
 	if (fabs(Magnitude) <= deadband){
 		Magnitude = 0;
 	}
@@ -139,7 +159,7 @@ void Swerve::SetpointToggle(int trigger)
 		FrontLeftAngle.SetSetpoint(300);
 	}
 	else
-		FrontLeftAngle.SetSetpoint(500);
+		FrontLeftAngle.SetSetpoint(150);
 
 	SmartDashboard::PutNumber("Front Right input", FLPot.PIDGet());
 	SmartDashboard::PutNumber("Front Right output", AFL.Get());
@@ -149,6 +169,7 @@ void Swerve::SetpointToggle(int trigger)
 	SmartDashboard::PutNumber("Front Right Error 2", FrontLeftAngle.GetError());
 	SmartDashboard::PutNumber("setpoint", FrontLeftAngle.GetSetpoint());
 	SmartDashboard::PutBoolean("PID Target", FrontLeftAngle.OnTarget());
+	SmartDashboard::PutNumber("FLPot volts", FLPot.GetVoltage());
 }
 
 void Swerve::SetAngle(){

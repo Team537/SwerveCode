@@ -54,7 +54,7 @@
 #define ZAXIS 3
 
 //PID
-#define AFL_P -.0024
+#define AFL_P -.0004
 #define AFR_P .0004
 #define ABL_P .00001
 #define ABR_P .00001
