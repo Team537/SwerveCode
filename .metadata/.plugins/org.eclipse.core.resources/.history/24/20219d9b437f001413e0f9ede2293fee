@@ -55,7 +55,7 @@
 
 //PID
 #define AFL_P -.0004
-#define AFR_P -.0004
+#define AFR_P .0004
 #define ABL_P .00001
 #define ABR_P .00001
 #define SFL_P .001

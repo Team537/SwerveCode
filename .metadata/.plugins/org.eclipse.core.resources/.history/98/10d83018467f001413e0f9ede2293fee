@@ -38,7 +38,7 @@ public:
 		BRPot(BR_ANGLE_POT),
 		BLPot(BL_ANGLE_POT),
 		gyro (GYRO),
-		FrontRightAngle(AFR_P, -.0001, -.002, &FRPot, &AFR),
+		FrontRightAngle(AFR_P, 0, 0, &FRPot, &AFR),
 		FrontLeftAngle(AFL_P, -.0001, -.002, &FLPot, &AFL),
 		BackRightAngle(ABR_P, 0, 0, &BRPot, &ABR),
 		BackLeftAngle(ABL_P, 0, 0, &BLPot, &ABL),
@@ -63,7 +63,7 @@ public:
 		FrontRightAngle.SetInputRange(1,1000);
 		//Back Right PID
 		BackRightAngle.SetInputRange(1,1000);
-		BackRightAngle.SetOutputRange(-.5,.5);		
+		BackRightAngle.SetOutputRange(-.1,.1);		
 		BackRightAngle.SetContinuous(true);
 		BackRightAngle.SetAbsoluteTolerance(10);
 		//Back Left PID

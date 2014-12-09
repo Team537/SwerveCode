@@ -38,7 +38,7 @@ public:
 		BRPot(BR_ANGLE_POT),
 		BLPot(BL_ANGLE_POT),
 		gyro (GYRO),
-		FrontRightAngle(AFR_P, -.0001, -.002, &FRPot, &AFR),
+		FrontRightAngle(AFR_P, 0, 0, &FRPot, &AFR),
 		FrontLeftAngle(AFL_P, -.0001, -.002, &FLPot, &AFL),
 		BackRightAngle(ABR_P, 0, 0, &BRPot, &ABR),
 		BackLeftAngle(ABL_P, 0, 0, &BLPot, &ABL),
@@ -49,29 +49,21 @@ public:
 	{
 		deadband = .1;
 		deadbandrad = (PI / 15);
-		//Front Left PID
-		FrontLeftAngle.SetInputRange(41,934);
+		FrontLeftAngle.SetInputRange(20,999);
 		FrontLeftAngle.SetAbsoluteTolerance(10);
-		FrontLeftAngle.SetOutputRange(-.5,.5);
-		FrontLeftAngle.SetContinuous(true);
-		
-
-		//Front Right PID
 		FrontRightAngle.SetAbsoluteTolerance(10);
-		FrontRightAngle.SetOutputRange(-.5,.5);
-		FrontRightAngle.SetContinuous(true);
-		FrontRightAngle.SetInputRange(1,1000);
-		//Back Right PID
-		BackRightAngle.SetInputRange(1,1000);
-		BackRightAngle.SetOutputRange(-.5,.5);		
+		BackLeftAngle.SetAbsoluteTolerance(10);
+		
+		BackRightAngle.SetOutputRange(-.1,.1);		
+		BackRightAngle.SetInputRange(1,1000); // FROM MIKE: This is needed to make continuous work
 		BackRightAngle.SetContinuous(true);
 		BackRightAngle.SetAbsoluteTolerance(10);
-		//Back Left PID
-		BackLeftAngle.SetAbsoluteTolerance(10);
-		BackLeftAngle.SetOutputRange(-.5,.5);
+		
+		FrontRightAngle.SetOutputRange(-.1,.1);
+		FrontLeftAngle.SetOutputRange(-.5,.5);
+		BackLeftAngle.SetOutputRange(-.1,.1);
 		BackLeftAngle.SetContinuous(true);
-		BackLeftAngle.SetInputRange(1,1000); 
-		//Other Sets
+		FrontLeftAngle.SetContinuous(true);
 		toggle = false;
 		lasttrigger = 0;
 		FLpotfeedbackmax = 850;
