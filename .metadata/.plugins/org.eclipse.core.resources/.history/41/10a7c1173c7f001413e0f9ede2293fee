@@ -5,7 +5,7 @@
 
 void Swerve::init(void){
 	FrontLeftAngle.Disable();
-	AFL.Set(.25);
+	AFL.Set(.3);
 	static bool bFirstTime = true;
 	inittimer.Start();
 	FLPot.GetVoltage();
@@ -25,8 +25,7 @@ void Swerve::init(void){
 		}
 	SmartDashboard::PutNumber("FLmax", FLpotfeedbackmax);
 	SmartDashboard::PutNumber("FLmin", FLPotfeedbackmin);
-	SmartDashboard::PutNumber("Potval", FLpotfeedback);
-	SmartDashboard::PutNumber("FLPot volts", FLPot.GetVoltage());
+
 }
 
 void Swerve::SetVariables(float Magnitude, float DirectionRadians, float Twist){
@@ -181,11 +180,11 @@ void Swerve::SetpointToggle(int trigger)
 }
 
 void Swerve::SetAngle(){
-	//FrontRightAngle.Enable();
-	//FrontRightAngle.SetSetpoint(700);
-	FrontLeftAngle.Enable();
-	FrontLeftAngle.SetSetpoint(((FLAng)*(FLRANGE)/360)-FLMIN);
-	/*BackRightAngle.Enable();
+	FrontRightAngle.Enable();
+	FrontRightAngle.SetSetpoint(700);
+	/*FrontLeftAngle.Enable();
+	FrontLeftAngle.SetSetpoint(FLAng);
+	BackRightAngle.Enable();
 	BackRightAngle.SetSetpoint(BRAng);
 	BackLeftAngle.Enable();
 	BackLeftAngle.SetSetpoint(BLAng);*/

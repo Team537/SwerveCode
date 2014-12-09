@@ -64,7 +64,7 @@
 #define SBR_P .001
 
 //Conversion Factor
-#define FLRANGE 893 
-#define FLMIN  41
+//#define FLMAX 
+//#define FLMIN
 
 #endif

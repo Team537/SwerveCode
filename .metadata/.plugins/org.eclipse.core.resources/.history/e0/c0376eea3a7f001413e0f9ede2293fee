@@ -10,7 +10,7 @@ class Swerve
 	
 	Victor SFR, SFL, SBR, SBL, AFR, AFL, ABR, ABL;
 	Encoder FREnc, FLEnc, BREnc, BLEnc;
-	AnalogChannel FRPot, FLPot, BRPot, BLPot; 
+	PotentiometerThreeSixty FRPot, FLPot, BRPot, BLPot; 
 	Gyro gyro;
 	float A, B, C, D, Ratio, frontrspeed, backrspeed, frontlspeed, backlspeed, FRAng, FLAng, BRAng, BLAng;
 	float deadband, deadbandrad;

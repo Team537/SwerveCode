@@ -10,7 +10,7 @@ class Swerve
 	
 	Victor SFR, SFL, SBR, SBL, AFR, AFL, ABR, ABL;
 	Encoder FREnc, FLEnc, BREnc, BLEnc;
-	AnalogChannel FRPot, FLPot, BRPot, BLPot; 
+	PotentiometerThreeSixty FRPot, FLPot, BRPot, BLPot; 
 	Gyro gyro;
 	float A, B, C, D, Ratio, frontrspeed, backrspeed, frontlspeed, backlspeed, FRAng, FLAng, BRAng, BLAng;
 	float deadband, deadbandrad;
@@ -66,8 +66,6 @@ public:
 		FrontLeftAngle.SetContinuous(true);
 		toggle = false;
 		lasttrigger = 0;
-		FLpotfeedbackmax = 850;
-		FLPotfeedbackmin = 50;
 	}
 	void Ramping();
 	void FindWheelSpeed();
@@ -83,7 +81,6 @@ private:
 	float frontrdif, backrdif, frontldif, backldif, FrontLeftOldSpeed, FrontRightOldSpeed, BackLeftOldSpeed, BackRightOldSpeed;
 	int lasttrigger;
 	bool toggle;
-	double FLpotfeedbackmax, FLPotfeedbackmin;
 };
 
 #endif

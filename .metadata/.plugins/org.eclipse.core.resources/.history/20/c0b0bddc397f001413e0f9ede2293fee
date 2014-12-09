@@ -5,7 +5,7 @@
 
 void Swerve::init(void){
 	FrontLeftAngle.Disable();
-	AFL.Set(.25);
+	AFL.Set(.3);
 	static bool bFirstTime = true;
 	inittimer.Start();
 	FLPot.GetVoltage();
@@ -16,20 +16,16 @@ void Swerve::init(void){
 		FrontLeftAngle.Enable();
 	}
 	SmartDashboard::PutNumber("timer", inittimer.Get());
-	double FLpotfeedback = FLPot.GetValue();
-	if (FLpotfeedback >= FLpotfeedbackmax){
-		FLpotfeedbackmax = FLpotfeedback;
-		}
-	if (FLpotfeedback <= FLPotfeedbackmin){
-		FLPotfeedbackmin = FLpotfeedback;
-		}
-	SmartDashboard::PutNumber("FLmax", FLpotfeedbackmax);
-	SmartDashboard::PutNumber("FLmin", FLPotfeedbackmin);
-	SmartDashboard::PutNumber("Potval", FLpotfeedback);
-	SmartDashboard::PutNumber("FLPot volts", FLPot.GetVoltage());
 }
 
 void Swerve::SetVariables(float Magnitude, float DirectionRadians, float Twist){
+	static bool b_minmaxset = false;
+
+	if (!b_minmaxset)
+		{
+		FLPot.SetMinMax(0.2, 0.4);
+		b_minmaxset = true;
+		}
 	
 	if (fabs(Magnitude) <= deadband){
 		Magnitude = 0;
@@ -148,7 +144,6 @@ void Swerve::FindAngle(){
 
 void Swerve::SetpointToggle(int trigger)
 {
-
 	FrontLeftAngle.Enable();
 	/*if(trigger == 1 && lasttrigger == 0){
 		if(toggle == true)
@@ -178,14 +173,16 @@ void Swerve::SetpointToggle(int trigger)
 	SmartDashboard::PutNumber("setpoint", FrontLeftAngle.GetSetpoint());
 	SmartDashboard::PutBoolean("PID Target", FrontLeftAngle.OnTarget());
 	SmartDashboard::PutNumber("FLPot volts", FLPot.GetVoltage());
+	SmartDashboard::PutNumber("Min volts", FLPot.getmin());
+	SmartDashboard::PutNumber("max volts", FLPot.getmax());
 }
 
 void Swerve::SetAngle(){
-	//FrontRightAngle.Enable();
-	//FrontRightAngle.SetSetpoint(700);
-	FrontLeftAngle.Enable();
-	FrontLeftAngle.SetSetpoint(((FLAng)*(FLRANGE)/360)-FLMIN);
-	/*BackRightAngle.Enable();
+	FrontRightAngle.Enable();
+	FrontRightAngle.SetSetpoint(700);
+	/*FrontLeftAngle.Enable();
+	FrontLeftAngle.SetSetpoint(FLAng);
+	BackRightAngle.Enable();
 	BackRightAngle.SetSetpoint(BRAng);
 	BackLeftAngle.Enable();
 	BackLeftAngle.SetSetpoint(BLAng);*/

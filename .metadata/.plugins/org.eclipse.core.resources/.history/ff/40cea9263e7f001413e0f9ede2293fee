@@ -181,11 +181,11 @@ void Swerve::SetpointToggle(int trigger)
 }
 
 void Swerve::SetAngle(){
-	//FrontRightAngle.Enable();
-	//FrontRightAngle.SetSetpoint(700);
-	FrontLeftAngle.Enable();
-	FrontLeftAngle.SetSetpoint(((FLAng)*(FLRANGE)/360)-FLMIN);
-	/*BackRightAngle.Enable();
+	FrontRightAngle.Enable();
+	FrontRightAngle.SetSetpoint(700);
+	/*FrontLeftAngle.Enable();
+	FrontLeftAngle.SetSetpoint(FLAng);
+	BackRightAngle.Enable();
 	BackRightAngle.SetSetpoint(BRAng);
 	BackLeftAngle.Enable();
 	BackLeftAngle.SetSetpoint(BLAng);*/
