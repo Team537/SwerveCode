@@ -31,9 +31,10 @@ public:
 			Sdrive.Sort();
 			Sdrive.Ramping();
 			//Sdrive.SetWheelSpeed();
-			Sdrive.FindAngle();
-			Sdrive.SetpointToggle(Controller.GetRawButton(1));
-			//Sdrive.SetAngle();
+			//Sdrive.FindAngle();
+			//Sdrive.SetpointToggle(Controller.GetRawButton(1));
+			Sdrive.JoystickAngle(Controller.GetDirectionDegrees(), Controller.GetMagnitude());
+			Sdrive.SetAngle();
 			//Sdrive.init();
 		}
 	}

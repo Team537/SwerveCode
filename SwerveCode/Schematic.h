@@ -55,7 +55,7 @@
 
 //PID
 #define AFL_P -.0004
-#define AFR_P -.0004
+#define AFR_P -.0008
 #define ABL_P .00001
 #define ABR_P .00001
 #define SFL_P .001
@@ -64,7 +64,11 @@
 #define SBR_P .001
 
 //Conversion Factor
+//Front Left
 #define FLRANGE 893 
 #define FLMIN  41
+//Front Right
+#define FRRANGE 889
+#define FRMIN 40
 
 #endif

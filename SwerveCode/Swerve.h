@@ -38,14 +38,14 @@ public:
 		BRPot(BR_ANGLE_POT),
 		BLPot(BL_ANGLE_POT),
 		gyro (GYRO),
-		FrontRightAngle(AFR_P, -.0001, -.002, &FRPot, &AFR),
-		FrontLeftAngle(AFL_P, -.0001, -.002, &FLPot, &AFL),
+		FrontRightAngle(AFR_P, -0.0001, -0.002, &FRPot, &AFR),
+		FrontLeftAngle(AFL_P, -0.0001, -0.002, &FLPot, &AFL),
 		BackRightAngle(ABR_P, 0, 0, &BRPot, &ABR),
 		BackLeftAngle(ABL_P, 0, 0, &BLPot, &ABL),
-		FrontRightSpeed(SFR_P, 0, .01, &FREnc, &SFR),
-		FrontLeftSpeed(SFL_P, 0, .01, &FLEnc, &SFL),
-		BackRightSpeed(SBR_P, 0, .01, &BREnc, &SBR),
-		BackLeftSpeed(SBL_P, 0, .01, &BLEnc, &SBL)
+		FrontRightSpeed(SFR_P, 0, 0, &FREnc, &SFR),
+		FrontLeftSpeed(SFL_P, 0, 0, &FLEnc, &SFL),
+		BackRightSpeed(SBR_P, 0, 0, &BREnc, &SBR),
+		BackLeftSpeed(SBL_P, 0, 0, &BLEnc, &SBL)
 	{
 		deadband = .1;
 		deadbandrad = (PI / 15);
@@ -84,14 +84,17 @@ public:
 	float Sign(float InputSign);
 	void FindAngle();
 	void SetAngle();
+	// Test Functions
 	void SetpointToggle(int trigger);
 	void init (void);
+	void JoystickAngle(float dirictionrad, float mag);
 
 private:
 	float frontrdif, backrdif, frontldif, backldif, FrontLeftOldSpeed, FrontRightOldSpeed, BackLeftOldSpeed, BackRightOldSpeed;
 	int lasttrigger;
 	bool toggle;
 	double FLpotfeedbackmax, FLPotfeedbackmin;
+	float ndrad,drad;
 };
 
 #endif

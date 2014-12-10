@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="org.eclipse.cdt.internal.ui.typehierarchy.OpenTypeInHierarchyActionSettings">
+		<item key="show_structs" value="true"/>
+		<item key="show_namespaces" value="false"/>
+		<item key="width" value="432"/>
+		<item key="show_functions" value="false"/>
+		<item key="show_typedefs" value="true"/>
+		<item key="show_macros" value="false"/>
+		<item key="show_lowlevel" value="true"/>
+		<item key="show_classes" value="true"/>
+		<item key="height" value="643"/>
+		<item key="y" value="0"/>
+		<item key="show_unions" value="true"/>
+		<item key="show_variables" value="false"/>
+		<item key="x" value="467"/>
+		<item key="show_enums" value="true"/>
+	</section>
+	<section name="org.eclipse.cdt.internal.ui.callhierarchy.OpenElementInCallHierarchyActionSettings">
+		<item key="show_structs" value="false"/>
+		<item key="show_namespaces" value="false"/>
+		<item key="width" value="481"/>
+		<item key="show_functions" value="true"/>
+		<item key="show_typedefs" value="false"/>
+		<item key="show_macros" value="false"/>
+		<item key="show_lowlevel" value="true"/>
+		<item key="show_classes" value="false"/>
+		<item key="height" value="625"/>
+		<item key="y" value="0"/>
+		<item key="show_unions" value="false"/>
+		<item key="show_variables" value="true"/>
+		<item key="x" value="443"/>
+		<item key="show_enums" value="false"/>
+	</section>
 	<section name="completion_proposal_size">
 	</section>
 </section>

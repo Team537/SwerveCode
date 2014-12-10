@@ -5,7 +5,7 @@
 
 void Swerve::init(void){
 	FrontLeftAngle.Disable();
-	AFL.Set(.25);
+	AFR.Set(.25);
 	static bool bFirstTime = true;
 	inittimer.Start();
 	FLPot.GetVoltage();
@@ -16,7 +16,7 @@ void Swerve::init(void){
 		FrontLeftAngle.Enable();
 	}
 	SmartDashboard::PutNumber("timer", inittimer.Get());
-	double FLpotfeedback = FLPot.GetValue();
+	double FLpotfeedback = FRPot.GetValue();
 	if (FLpotfeedback >= FLpotfeedbackmax){
 		FLpotfeedbackmax = FLpotfeedback;
 		}
@@ -177,14 +177,21 @@ void Swerve::SetpointToggle(int trigger)
 	SmartDashboard::PutNumber("Front Right Error 2", FrontRightAngle.GetError());
 	SmartDashboard::PutNumber("setpoint", FrontRightAngle.GetSetpoint());
 	SmartDashboard::PutBoolean("PID Target", FrontRightAngle.OnTarget());
-	SmartDashboard::PutNumber("FLPot volts", FLPot.GetVoltage());
+	SmartDashboard::PutNumber("FLPot volts", FRPot.GetVoltage());
+}
+
+void Swerve::JoystickAngle(float dirictionrad, float mag)
+{
+	if (fabs(mag) >= .2)
+	  drad = dirictionrad+180;
+	
 }
 
 void Swerve::SetAngle(){
-	//FrontRightAngle.Enable();
-	//FrontRightAngle.SetSetpoint(700);
+	FrontRightAngle.Enable();
+	FrontRightAngle.SetSetpoint(((drad)*(FRRANGE)/360)-FRMIN);
 	FrontLeftAngle.Enable();
-	FrontLeftAngle.SetSetpoint(((FLAng)*(FLRANGE)/360)-FLMIN);
+	FrontLeftAngle.SetSetpoint(((drad)*(FLRANGE)/360)-FLMIN);
 	/*BackRightAngle.Enable();
 	BackRightAngle.SetSetpoint(BRAng);
 	BackLeftAngle.Enable();
@@ -197,7 +204,13 @@ void Swerve::SetAngle(){
 		ABR.Set(0);
 	if (BackLeftAngle.OnTarget())
 		ABL.Set(0);
-	SmartDashboard::PutNumber("Front Right input", FRPot.PIDGet());
-	SmartDashboard::PutNumber("Front Right output", AFR.Get());
-	SmartDashboard::PutNumber("Front Right Error", FrontRightAngle.GetError());
+	SmartDashboard::PutNumber("Front Right input", FLPot.PIDGet());
+	SmartDashboard::PutNumber("Front Right output", AFL.Get());
+	SmartDashboard::PutNumber("Front Right Error", FrontLeftAngle.GetError());
+	SmartDashboard::PutNumber("Front Right input 2", FLPot.PIDGet());
+	SmartDashboard::PutNumber("Front Right output 2", AFL.Get());
+	SmartDashboard::PutNumber("Front Right Error 2", FrontLeftAngle.GetError());
+	SmartDashboard::PutNumber("setpoint", FrontLeftAngle.GetSetpoint());
+	SmartDashboard::PutBoolean("PID Target", FrontLeftAngle.OnTarget());
+	SmartDashboard::PutNumber("FLPot volts", FLPot.GetVoltage());
 }
