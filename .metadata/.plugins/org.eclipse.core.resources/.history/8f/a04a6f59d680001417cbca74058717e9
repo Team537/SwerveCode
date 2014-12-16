@@ -1,0 +1,33 @@
+#include "WPILib.h"
+
+class RobotDemo : public SimpleRobot
+{
+
+public:
+	RobotDemo():
+
+	{
+
+	}
+
+	void Autonomous()
+	{
+
+	}
+
+	void OperatorControl()
+	{
+
+		while (IsOperatorControl())
+		{
+
+		}
+	}
+	
+	void Test() {
+
+	}
+};
+
+START_ROBOT_CLASS(RobotDemo);
+

@@ -1,0 +1,36 @@
+#include "WPILib.h"
+#include "Schematic.h"
+#include "Thing.h"
+
+class RobotDemo : public SimpleRobot
+{
+private:
+	Joystick Controller;
+	Thing smethin;
+public:
+	RobotDemo(void):
+		Controller(CONTROLLER)
+	{
+	
+	} 
+	void Autonomous()
+	{
+		
+	}
+
+	void OperatorControl()
+	{
+		while (IsOperatorControl())
+		{
+			//smethin.SetVariables( Controller.GetMagnitude(),  Controller.GetDirectionRadians(),  Controller.GetRawAxis(ZAXIS));
+			smethin.SetAngle(100);//Controller.GetRawAxis(Z_AXIS));
+			//Sdrive.init();
+		}
+	}
+	
+	void Test() {
+
+	}
+};
+
+START_ROBOT_CLASS(RobotDemo);

@@ -1,0 +1,44 @@
+#ifndef THING_H
+#define THING_H
+#include "Schematic.h"
+#include "cmath"
+#include "WPILib.h"
+
+class Thing
+{
+	
+	Victor LDVictor, RDVictor;
+	Encoder LEnc, REnc; 
+	float deadband;
+	PIDController LSpd,RSpd;
+	Timer inittimer;
+	
+public:
+	//void SetVariables(float Magnitude, float DirectionRadians, float Twist);
+	Thing(void):
+		LDVictor(L_VICTOR),
+		RDVictor(R_VICTOR),
+		LEnc(LENC,true,CounterBase::k4X),
+		REnc(RENC,true,CounterBase::k4X),
+		LSpd( LP,0, 0, &LEnc, &LDVictor),
+		RSpd( RP,0, 0, &LEnc, &RDVictor)
+	{
+		deadband = .1;
+		//PID
+		LSpd.SetAbsoluteTolerance(.01);
+		LSpd.SetOutputRange(-1,1);
+		RSpd.SetAbsoluteTolerance(.01);
+		RSpd.SetOutputRange(-1,1);
+		REnc.SetDistancePerPulse(0.05026548);
+		LEnc.SetDistancePerPulse(0.05026548);
+		//Other Sets
+		//Potfeedbackmax = 850;
+		//Potfeedbackmin = 50;
+	}
+	void Setspeed(float axis);
+
+private:
+	
+};
+
+#endif

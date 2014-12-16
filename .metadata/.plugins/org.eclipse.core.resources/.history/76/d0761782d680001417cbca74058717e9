@@ -1,0 +1,29 @@
+#ifndef THING_H
+#define THING_H
+
+class Thing
+{
+	Victor OnlyVictor;
+	AnalogChannel OnlyPot;
+	float OnlyAng, deadband, deadbandrad;
+	PIDController OnlyAngle;
+	Timer Timer;
+	
+public:
+	OnlyVictor(ONLY_VICTOR),
+	OnlyPot(ONLY_POT),
+	OnlyAngle(Only_P, -0.0001, -0, &OnlyPot, &OnlyVictor)
+	{
+		OnlyAngle.SetInputRange(41,934);
+		OnlyAngle.SetAbsoluteTolerance(10);
+		OnlyAngle.SetOutputRange(-.5,.5);
+		OnlyAngle.SetContinuous(true);
+		
+	}
+	void Ramping();
+	void SetAngle();
+	
+		
+private:
+	float ndrad,drad;
+};

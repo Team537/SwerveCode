@@ -1,4 +1,5 @@
-#Thu Oct 30 16:49:48 CDT 2014
+#Wed Dec 10 19:40:16 CST 2014
 useAnnotationsPrefPage=true
+org.eclipse.cdt.ui.editor.showSegments=true
 eclipse.preferences.version=1
 useQuickDiffPrefPage=true

@@ -1,0 +1,21 @@
+#include "Thing.h"
+#include "Schematic.h"
+#include "WPILib.h"
+
+void Thing::Setspeed(float axis, int bshift)
+{
+	LDVictor.Set(axis);
+	if (bshift == 1) {
+			dshift.Set(1);
+	}
+	crate = LEnc.GetRate();
+	if (crate >= max)
+	{
+		max = crate;
+	}
+	//Spd.SetPID(.01,0,0,.2)
+	//Spd.SetSetpoint(axis);
+	SmartDashboard::PutNumber("Left Rate", LEnc.GetRate());
+	SmartDashboard::PutNumber("Max Left Rate", max);
+
+}

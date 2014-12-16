@@ -1,0 +1,10 @@
+#include "Thing.h"
+#include "Schematic.h"
+#include "WPILib.h"
+
+void Thing::Setspeed(float axis)
+{
+	Enc.GetRate();
+	//Spd.SetPID(.01,0,0,.2)
+	//Spd.SetSetpoint(axis);
+}

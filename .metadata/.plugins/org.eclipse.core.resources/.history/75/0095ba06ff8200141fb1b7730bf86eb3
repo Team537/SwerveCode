@@ -1,0 +1,37 @@
+#ifndef THING_H
+#define THING_H
+#include "Schematic.h"
+#include "cmath"
+#include "WPILib.h"
+
+class Thing
+{
+	
+	Victor DVictor;
+	Encoder Enc; 
+	float deadband;
+	PIDController OnlyAngle;
+	Timer inittimer;
+	
+public:
+	//void SetVariables(float Magnitude, float DirectionRadians, float Twist);
+	Thing(void):
+		DVictor(ONLY_VICTOR),
+		Enc(ONLY_POT,true,CounterBase::k4X),
+		OnlyAngle(ONLY_P, 0.000/*1*/, -0.002, &Enc, &DVictor)
+	{
+		deadband = .1;
+		//PID
+		OnlyAngle.SetAbsoluteTolerance(.01);
+		OnlyAngle.SetOutputRange(-1,1);
+		//Other Sets
+		//Potfeedbackmax = 850;
+		//Potfeedbackmin = 50;
+	}
+	void SetAngle(float twist);
+
+private:
+	
+};
+
+#endif

@@ -1,0 +1,9 @@
+#include "Thing.h"
+#include "Schematic.h"
+#include "WPILib.h"
+
+void Thing::Speed(float axis)
+{
+	Spd.SetSetPoint(axis);
+	
+}

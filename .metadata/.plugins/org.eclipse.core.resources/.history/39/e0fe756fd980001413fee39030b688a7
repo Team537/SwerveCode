@@ -1,0 +1,73 @@
+#ifndef THING_H
+#define THING_H
+#include "Schematic.h"
+#include "cmath"
+#include "WPILib.h"
+
+class Swerve
+{
+	
+	Victor OnlyVictor;
+	AnalogChannel OnlyPot; 
+	float Ratio, OnlyAng, deadband, deadbandrad;
+	PIDController OnlyAngle;
+	Timer inittimer;
+	
+public:
+	void SetVariables(float Magnitude, float DirectionRadians, float Twist);
+	Swerve(void):
+		OnlyVictor(ONLY_VICTOR),
+		OnlyPot(ONLYPOT),
+		OnlyAngle(ONLY_P, -0.0001, -0.002, &OnlyPot, &OnlyVictor)
+	{
+		deadband = .1;
+		deadbandrad = (PI / 15);
+		//Front Left PID
+		FrontLeftAngle.SetInputRange(41,934);
+		FrontLeftAngle.SetAbsoluteTolerance(10);
+		FrontLeftAngle.SetOutputRange(-.5,.5);
+		FrontLeftAngle.SetContinuous(true);
+		
+
+		//Front Right PID
+		FrontRightAngle.SetAbsoluteTolerance(10);
+		FrontRightAngle.SetOutputRange(-.5,.5);
+		FrontRightAngle.SetContinuous(true);
+		FrontRightAngle.SetInputRange(1,1000);
+		//Back Right PID
+		BackRightAngle.SetInputRange(1,1000);
+		BackRightAngle.SetOutputRange(-.5,.5);		
+		BackRightAngle.SetContinuous(true);
+		BackRightAngle.SetAbsoluteTolerance(10);
+		//Back Left PID
+		BackLeftAngle.SetAbsoluteTolerance(10);
+		BackLeftAngle.SetOutputRange(-.5,.5);
+		BackLeftAngle.SetContinuous(true);
+		BackLeftAngle.SetInputRange(1,1000); 
+		//Other Sets
+		toggle = false;
+		lasttrigger = 0;
+		FLpotfeedbackmax = 850;
+		FLPotfeedbackmin = 50;
+	}
+	void Ramping();
+	void FindWheelSpeed();
+	void Sort();
+	void SetWheelSpeed();
+	float Sign(float InputSign);
+	void FindAngle();
+	void SetAngle();
+	// Test Functions
+	void SetpointToggle(int trigger);
+	void init (void);
+	void JoystickAngle(float dirictionrad, float mag);
+
+private:
+	float frontrdif, backrdif, frontldif, backldif, FrontLeftOldSpeed, FrontRightOldSpeed, BackLeftOldSpeed, BackRightOldSpeed;
+	int lasttrigger;
+	bool toggle;
+	double FLpotfeedbackmax, FLPotfeedbackmin;
+	float ndrad,drad;
+};
+
+#endif

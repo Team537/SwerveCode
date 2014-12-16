@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WRProjectWizard">
+		<item key="WRTargetOSWizardPage.STORE_SELECTED_PLATFORM" value="Host OS (Native Development)"/>
+		<item key="WRGenericProjectWizardBuildTypePage.STORE_SELECTED_BUILD_TYPE" value="C/C++ Application"/>
+		<item key="WRGenericProjectWizardBuildTypePage.STORE_SELECTED_PLATFORM" value="Host OS (Native Development)"/>
+		<list key="WRWizardNewProjectCreationPage.STORE_PROJECT_LOCATION">
+			<item value="C:\Team537Code\SwerveCode\PIDTuning"/>
+		</list>
 	</section>
 </section>

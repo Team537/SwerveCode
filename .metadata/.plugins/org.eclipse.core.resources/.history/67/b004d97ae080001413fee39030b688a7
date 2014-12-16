@@ -1,0 +1,25 @@
+#ifndef SCHEMATIC_H
+#define SCHEMATIC_H
+
+//Constants
+#define RAMP_SPEED .1
+#define PI 3.1415926535897932384626433832795028841971693993751058209749445923078164
+
+//Victors
+#define ONLY_VICTOR 1,2
+
+//Kintroller
+#define CONTROLLER 1
+#define Z_AXIS 3
+
+//Analog Inputs
+#define ONLY_POT 1,6
+
+//PID
+#define ONLY_P -.001
+
+//Conversion Factor
+#define RANGE 889
+#define MIN 40
+
+#endif

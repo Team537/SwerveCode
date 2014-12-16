@@ -1,0 +1,22 @@
+#include "Thing.h"
+#include "Schematic.h"
+#include "WPILib.h"
+
+void Thing::SetAngle(float twist)
+{
+	OnlyAngle.Enable();
+	if (fabs(twist) > deadband)
+	{
+		OnlyAngle.SetSetpoint(twist);
+		
+		if (OnlyAngle.OnTarget())
+		{
+			OnlyVictor.Set(0);
+		}
+	}
+	else
+	{
+		twist = 0;
+	}
+	
+}

@@ -1,0 +1,36 @@
+#include "WPILib.h"
+#include "Schematic.h"
+#include "Thing.h"
+
+class RobotDemo : public SimpleRobot
+{
+	Joystick Controller;
+	Solenoid dshift; 
+	Thing SpdSet;
+private:
+
+public:
+	RobotDemo(void):
+		Controller(CONTROLLER)
+	{
+	
+	} 
+	void Autonomous()
+	{
+		
+	}
+
+	void OperatorControl()
+	{
+		while (IsOperatorControl())
+		{
+			SpdSet.Setspeed(Controller.GetRawAxis(2));
+		}
+	}
+	
+	void Test() {
+
+	}
+};
+
+START_ROBOT_CLASS(RobotDemo);

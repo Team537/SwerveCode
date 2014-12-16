@@ -1,0 +1,13 @@
+#include "Thing.h"
+#include "Schematic.h"
+#include "WPILib.h"
+
+void Thing::Setspeed(float axis)
+{
+	LEnc.GetRate();
+	REnc.GetRate();
+	//Spd.SetPID(.01,0,0,.2)
+	//Spd.SetSetpoint(axis);
+	SmartDashboard::PutNumber("Right Rate",	REnc.GetRate());
+	SmartDashboard::PutNumber("Left Rate", LEnc.GetRate());
+}

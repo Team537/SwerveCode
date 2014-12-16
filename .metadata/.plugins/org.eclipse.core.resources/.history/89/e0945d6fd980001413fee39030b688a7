@@ -1,0 +1,38 @@
+#include "WPILib.h"
+#include "Thing.h"
+#define "Schematic.h"
+
+class RobotDemo : public SimpleRobot
+{
+private:
+	Joystick Controller;
+	Thing thing;
+	
+public:
+	RobotDemo():
+		Controller(CONTROLLER);
+	{
+
+	}
+
+	void Autonomous()
+	{
+
+	}
+
+	void OperatorControl()
+	{
+
+		while (IsOperatorControl())
+		{
+
+		}
+	}
+	
+	void Test() {
+
+	}
+};
+
+START_ROBOT_CLASS(RobotDemo);
+

@@ -1,0 +1,17 @@
+#ifndef SCHEMATIC_H
+#define SCHEMATIC_H
+
+//Victors
+#define ONLY_VICTOR 1,2
+
+//Kintroller
+#define CONTROLLER 1
+#define AXIS_Z 3
+
+//Analog inputs
+#define ONLY_POT 1,6
+
+//PID
+#define ONLY_P 0.0001
+
+#endif

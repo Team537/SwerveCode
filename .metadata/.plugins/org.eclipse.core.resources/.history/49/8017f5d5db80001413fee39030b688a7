@@ -1,0 +1,67 @@
+#include "Thing.h"
+#include "Schematic.h"
+#include "WPILib.h"
+
+/*void Thing::init(void){
+	FrontLeftAngle.Disable();
+	AFR.Set(.25);
+	static bool bFirstTime = true;
+	inittimer.Start();
+	FLPot.GetVoltage();
+	if (inittimer.Get() >= 4){
+		inittimer.Stop();
+		OnlyVictor.Set(0);
+		bFirstTime = false;
+		FrontLeftAngle.Enable();
+	}
+	SmartDashboard::PutNumber("timer", inittimer.Get());
+	double FLpotfeedback = FRPot.GetValue();
+	if (FLpotfeedback >= FLpotfeedbackmax){
+		FLpotfeedbackmax = FLpotfeedback;
+		}
+	if (FLpotfeedback <= FLPotfeedbackmin){
+		FLPotfeedbackmin = FLpotfeedback;
+		}
+	SmartDashboard::PutNumber("FLmax", FLpotfeedbackmax);
+	SmartDashboard::PutNumber("FLmin", FLPotfeedbackmin);
+	SmartDashboard::PutNumber("Potval", FLpotfeedback);
+	SmartDashboard::PutNumber("FLPot volts", FLPot.GetVoltage());
+}*/
+
+float Thing::Sign(float InputSign) 
+{
+	if (InputSign > 0) 
+	{
+		return 1;
+	}
+	if (InputSign < 0) 
+	{
+		return -1;
+	}
+	return 0;
+}
+
+void Thing::JoystickAngle(float dirictionrad, float mag)
+{
+	if (fabs(mag) >= .2)
+	  drad = dirictionrad+180;
+	
+}
+
+void Thing::SetAngle(float twist)
+{
+	OnlyAngle.Enable();
+	if (fabs(twist) <= deadband)
+	{
+			twist = 0;
+	}
+	else ()
+	{
+		OnlyAngle.SetSetpoint(twist);
+		if (OnlyAngle.OnTarget())
+		{
+			OnlyVictor.Set(0);
+		}
+	}
+	
+}

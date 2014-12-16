@@ -1,0 +1,43 @@
+#include "WPILib.h"
+#include "Schematic.h"
+#include "Thing.h"
+
+class RobotDemo : public SimpleRobot
+{
+private:
+	Joystick Controller;
+	Thing thing;
+public:
+	RobotDemo(void):
+		Controller(CONTROLLER)
+	{
+	
+	} 
+	void Autonomous()
+	{
+		
+	}
+
+	void OperatorControl()
+	{
+		while (IsOperatorControl())
+		{
+			thing.SetVariables( Controller.GetMagnitude(),  Controller.GetDirectionRadians(),  Controller.GetRawAxis(ZAXIS));
+			thing.FindWheelSpeed();
+			thing.Sort();
+			thing.Ramping();
+			//Sdrive.SetWheelSpeed();
+			//Sdrive.FindAngle();
+			//Sdrive.SetpointToggle(Controller.GetRawButton(1));
+			thing.JoystickAngle(Controller.GetDirectionDegrees(), Controller.GetMagnitude());
+			thing.SetAngle();
+			//Sdrive.init();
+		}
+	}
+	
+	void Test() {
+
+	}
+};
+
+START_ROBOT_CLASS(RobotDemo);

@@ -1,0 +1,46 @@
+#ifndef THING_H
+#define THING_H
+#include "Schematic.h"
+#include "cmath"
+#include "WPILib.h"
+
+class Thing
+{
+	
+	Victor OnlyVictor;
+	AnalogChannel OnlyPot; 
+	float Ratio, OnlyAng, deadband, deadbandrad;
+	PIDController OnlyAngle;
+	Timer inittimer;
+	
+public:
+	void SetVariables(float Magnitude, float DirectionRadians, float Twist);
+	Swerve(void):
+		OnlyVictor(ONLY_VICTOR),
+		OnlyPot(ONLY_POT),
+		OnlyAngle(ONLY_P, -0.0001, -0.002, &OnlyPot, &OnlyVictor)
+	{
+		deadband = .1;
+		deadbandrad = (PI / 15);
+		//PID
+		OnlyAngle.SetAbsoluteTolerance(10);
+		OnlyAngle.SetOutputRange(-.5,.5);
+		OnlyAngle.SetContinuous(true);
+		OnlyAngle.SetInputRange(1,1000); 
+		//Other Sets
+		Potfeedbackmax = 850;
+		Potfeedbackmin = 50;
+	}
+	float Sign(float InputSign);
+	void FindAngle();
+	void SetAngle(float twist);
+	// Test Functions
+	void init (void);
+	void JoystickAngle(float dirictionrad, float mag);
+
+private:
+	double Potfeedbackmax, Potfeedbackmin;
+	float ndrad,drad;
+};
+
+#endif
