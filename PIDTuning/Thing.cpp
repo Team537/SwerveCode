@@ -8,14 +8,14 @@ void Thing::Setspeed(float axis, int bshift, int buttonswitch)
 	if (fabs(axis) >= .1){
 	LDVictor.Set(axis);
 	}
-	
 	cencrate = LEnc.GetRate();
 	if (cencrate >= encmax)
 	{
 		encmax = cencrate;
 	}
-	LSpd.SetPID(.05,0,0,.2);
-	if (buttonswitch = 1)
+	LSpd.SetPID(0.00005,0,0,(-1/MAX_RATE));
+	LSpd.Enable();
+	if (buttonswitch == 1)
 	{
 		LSpd.SetSetpoint(.5*MAX_RATE);
 	}

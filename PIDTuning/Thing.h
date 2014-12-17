@@ -27,6 +27,7 @@ public:
 		LSpd.SetAbsoluteTolerance(.01);
 		LSpd.SetOutputRange(-1,1);
 		LEnc.SetDistancePerPulse(0.05026548);
+		LEnc.SetPIDSourceParameter(PIDSource::kRate);
 		//Other Sets
 		//Potfeedbackmax = 850;
 		//Potfeedbackmin = 50;

@@ -60,7 +60,7 @@ public:
 		FrontRightAngle.SetAbsoluteTolerance(10);
 		FrontRightAngle.SetOutputRange(-.5,.5);
 		FrontRightAngle.SetContinuous(true);
-		FrontRightAngle.SetInputRange(1,1000);
+		FrontRightAngle.SetInputRange(40,829);
 		//Back Right PID
 		BackRightAngle.SetInputRange(1,1000);
 		BackRightAngle.SetOutputRange(-.5,.5);		
