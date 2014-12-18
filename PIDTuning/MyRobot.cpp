@@ -25,7 +25,7 @@ public:
 		while (IsOperatorControl())
 		{
 			compress.checkCompressor();
-			SpdSet.Setspeed(Controller.GetRawAxis(2), Controller.GetRawButton(1), Controller.GetRawButton(6));
+			SpdSet.Setspeed(Controller.GetRawAxis(2), Controller.GetRawAxis(4), Controller.GetRawButton(1), Controller.GetRawButton(6));
 		}
 	}
 	
