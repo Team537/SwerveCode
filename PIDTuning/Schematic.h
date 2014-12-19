@@ -14,8 +14,8 @@
 #define RENC 1,3,1,4
 
 //PID
-#define LP .01
-#define RP .01
+#define LP 0.00005
+#define RP -0.00005
 
 #define MAX_RATE_RIGHT 117.443
 #define MAX_RATE_LEFT 117.443

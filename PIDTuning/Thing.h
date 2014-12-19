@@ -27,11 +27,11 @@ public:
 	{
 		deadband = .1;
 		//PID
-		LSpd.SetAbsoluteTolerance(.01);
+		LSpd.SetAbsoluteTolerance(3);
 		LSpd.SetOutputRange(-1,1);
 		LEnc.SetDistancePerPulse(0.05026548);
 		LEnc.SetPIDSourceParameter(PIDSource::kRate);
-		RSpd.SetAbsoluteTolerance(.01);
+		RSpd.SetAbsoluteTolerance(3);
 		RSpd.SetOutputRange(-1,1);
 		REnc.SetDistancePerPulse(0.05026548);
 		REnc.SetPIDSourceParameter(PIDSource::kRate);
@@ -40,12 +40,14 @@ public:
 		//Potfeedbackmin = 50;
 		Lencmax = 0;
 		Rencmax = 0;
+		firsttime =true;
 	}
-	void Setspeed(float Laxis, float Raxis, int bshift, int buttonswitch);
+	void Setspeed(float Laxis, float Raxis, int bshifth, int bshiftl, int buttonswitch);
 
 private:
 	double cLencrate, cRencrate;
 	double Lencmax, Rencmax;
+	bool firsttime;
 };
 
 #endif

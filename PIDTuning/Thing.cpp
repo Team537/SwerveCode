@@ -2,8 +2,16 @@
 #include "Schematic.h"
 #include "WPILib.h"
 
-void Thing::Setspeed(float Laxis, float Raxis, int bshift, int buttonswitch)
+void Thing::Setspeed(float Laxis, float Raxis, int bshifth, int bshiftl, int buttonswitch)
 {
+	if (firsttime == true)
+	{
+		LEnc.Reset();
+		REnc.Reset();
+		LSpd.Reset();
+		RSpd.Reset();
+		firsttime = false;
+	}
 	LEnc.Start();
 	REnc.Start();
 	/*if (fabs(Laxis) >= .1){
@@ -12,6 +20,14 @@ void Thing::Setspeed(float Laxis, float Raxis, int bshift, int buttonswitch)
 	if (fabs(Raxis) >= .1){
 		RDVictor.Set(Raxis);
 	}*/
+	if (bshifth == 1)
+	{
+		dshift.Set(1);
+	}
+	if (bshiftl== 1)
+	{
+		dshift.Set(0);
+	}
 	cLencrate = LEnc.GetRate();
 	if (cLencrate >= Lencmax)
 	{
@@ -22,19 +38,19 @@ void Thing::Setspeed(float Laxis, float Raxis, int bshift, int buttonswitch)
 	{
 		Rencmax = cRencrate;
 	}
-	LSpd.SetPID(0.00005,0,0,(-1/MAX_RATE_LEFT));
+	LSpd.SetPID(LP,-0.0001,0,(-1/MAX_RATE_LEFT));
 	LSpd.Enable();
-	RSpd.SetPID(0.00005,0,0,(-1/MAX_RATE_LEFT));
+	RSpd.SetPID(RP,-0.0001,0,(-1/MAX_RATE_RIGHT));
 	RSpd.Enable();
 	if (buttonswitch == 1)
 	{
-		LSpd.SetSetpoint(.5*MAX_RATE_LEFT);
-		RSpd.SetSetpoint(.5*MAX_RATE_RIGHT);
+		LSpd.SetSetpoint(-.5*MAX_RATE_LEFT);
+		RSpd.SetSetpoint(-.5*MAX_RATE_RIGHT);
 	}
 	else
 	{
 		LSpd.SetSetpoint(.75*MAX_RATE_LEFT);
-		RSpd.SetSetpoint(.75*MAX_RATE_RIGHT);
+		RSpd.SetSetpoint(-.75*MAX_RATE_RIGHT);
 	}
 	
 	
@@ -48,4 +64,6 @@ void Thing::Setspeed(float Laxis, float Raxis, int bshift, int buttonswitch)
 	SmartDashboard::PutNumber("Max Right Rate", Rencmax);
 	SmartDashboard::PutNumber("R Setpoint", RSpd.GetSetpoint());
 	SmartDashboard::PutNumber("RightRate2", cRencrate);
+	SmartDashboard::PutNumber("RSpd Error", RSpd.GetError());
+
 }

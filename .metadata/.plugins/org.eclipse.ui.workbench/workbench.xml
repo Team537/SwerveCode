@@ -40,19 +40,19 @@
 </editorArea>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="Thing.h" partName="Thing.h" path="C:/Team537Code/SwerveCode/PIDTuning/Thing.h" title="Thing.h" tooltip="PIDTuning/Thing.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PIDTuning/Thing.h"/>
-<editorState selectionHPixel="0" selectionLength="0" selectionOffset="623"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="811"/>
 </editor>
 <editor focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="Thing.cpp" partName="Thing.cpp" path="C:/Team537Code/SwerveCode/PIDTuning/Thing.cpp" title="Thing.cpp" tooltip="PIDTuning/Thing.cpp" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PIDTuning/Thing.cpp"/>
-<editorState selectionHPixel="0" selectionLength="0" selectionOffset="801"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="897"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="MyRobot.cpp" partName="MyRobot.cpp" path="C:/Team537Code/SwerveCode/PIDTuning/MyRobot.cpp" title="MyRobot.cpp" tooltip="PIDTuning/MyRobot.cpp" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PIDTuning/MyRobot.cpp"/>
-<editorState selectionHPixel="0" selectionLength="0" selectionOffset="484"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="311"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="Schematic.h" partName="Schematic.h" path="C:/Team537Code/SwerveCode/PIDTuning/Schematic.h" title="Schematic.h" tooltip="PIDTuning/Schematic.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PIDTuning/Schematic.h"/>
-<editorState selectionHPixel="0" selectionLength="14" selectionOffset="253"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="243"/>
 </editor>
 </editors>
 <views>
@@ -274,175 +274,167 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/Thing.cpp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/SwerveCode/Swerve.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/Schematic.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/Thing.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/MyRobot.cpp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/Thing.cpp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/Thing.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/Schematic.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/CompressorManager.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/CompressorManager.cpp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/SwerveCode/Swerve.cpp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/SwerveCode/Swerve.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/MyRobot.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/MyRobot.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/Schematic.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/Thing.cpp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/SwerveCode/Schematic.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/Thing.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/Thing.cpp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/MyRobot.cpp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/Thing.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/Schematic.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/Thing.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/MyRobot.cpp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PIDTuning/Thing.cpp"/>
 </editors>
-<item historyLabel="Thing.cpp" index="0">
-<position info="not_deleted" x="767" y="0"/>
+<item historyLabel="Thing.h" index="1">
+<position info="not_deleted" x="402" y="0"/>
 </item>
-<item historyLabel="Thing.cpp" index="0">
-<position info="not_deleted" x="349" y="1"/>
+<item historyLabel="Thing.cpp" index="3">
+<position info="not_deleted" x="249" y="0"/>
 </item>
-<item historyLabel="Swerve.cpp" index="1">
-<position/>
+<item historyLabel="Thing.cpp" index="3">
+<position info="not_deleted" x="446" y="0"/>
 </item>
-<item historyLabel="Thing.cpp" index="0">
-<position info="not_deleted" x="349" y="1"/>
+<item historyLabel="Thing.h" index="1">
+<position info="not_deleted" x="1051" y="0"/>
 </item>
-<item historyLabel="Thing.cpp" index="0">
-<position info="not_deleted" x="542" y="0"/>
+<item historyLabel="Thing.h" index="1">
+<position info="not_deleted" x="402" y="0"/>
+</item>
+<item historyLabel="Schematic.h" index="0">
+<position info="not_deleted" x="75" y="24"/>
+</item>
+<item historyLabel="Thing.h" index="1">
+<position info="not_deleted" x="660" y="0"/>
+</item>
+<item historyLabel="Thing.cpp" index="3">
+<position info="not_deleted" x="493" y="0"/>
+</item>
+<item historyLabel="Thing.h" index="1">
+<position info="not_deleted" x="623" y="0"/>
 </item>
 <item historyLabel="MyRobot.cpp" index="2">
+<position info="not_deleted" x="484" y="0"/>
+</item>
+<item historyLabel="Thing.cpp" index="3">
+<position/>
+</item>
+<item historyLabel="Schematic.h" index="0">
+<position info="not_deleted" x="253" y="14"/>
+</item>
+<item historyLabel="MyRobot.cpp" index="2">
+<position info="not_deleted" x="484" y="0"/>
+</item>
+<item historyLabel="Thing.cpp" index="3">
+<position info="not_deleted" x="636" y="8"/>
+</item>
+<item historyLabel="MyRobot.cpp" index="2">
+<position info="not_deleted" x="484" y="0"/>
+</item>
+<item historyLabel="Schematic.h" index="0">
+<position info="not_deleted" x="285" y="13"/>
+</item>
+<item historyLabel="Thing.cpp" index="3">
+<position info="not_deleted" x="703" y="0"/>
+</item>
+<item historyLabel="Schematic.h" index="0">
+<position info="not_deleted" x="253" y="14"/>
+</item>
+<item historyLabel="Thing.cpp" index="3">
+<position info="not_deleted" x="703" y="0"/>
+</item>
+<item historyLabel="Thing.cpp" index="3">
+<position info="not_deleted" x="705" y="0"/>
+</item>
+<item historyLabel="Thing.h" index="4">
 <position/>
 </item>
 <item historyLabel="Thing.cpp" index="3">
 <position/>
 </item>
-<item historyLabel="Thing.h" index="4">
-<position info="not_deleted" x="730" y="0"/>
-</item>
 <item historyLabel="Schematic.h" index="5">
-<position info="not_deleted" x="209" y="0"/>
-</item>
-<item historyLabel="CompressorManager.h" index="6">
-<position info="not_deleted" x="113" y="17"/>
-</item>
-<item historyLabel="CompressorManager.cpp" index="7">
-<position info="not_deleted" x="82" y="15"/>
-</item>
-<item historyLabel="Swerve.cpp" index="8">
-<position/>
-</item>
-<item historyLabel="Swerve.h" index="9">
-<position/>
-</item>
-<item historyLabel="Schematic.h" index="10">
-<position/>
-</item>
-<item historyLabel="Swerve.h" index="9">
-<position/>
-</item>
-<item historyLabel="Schematic.h" index="10">
-<position/>
-</item>
-<item historyLabel="Swerve.h" index="9">
-<position/>
-</item>
-<item historyLabel="Swerve.cpp" index="8">
-<position/>
-</item>
-<item historyLabel="Swerve.h" index="9">
-<position info="not_deleted" x="2038" y="0"/>
-</item>
-<item historyLabel="Schematic.h" index="10">
-<position info="not_deleted" x="1372" y="0"/>
-</item>
-<item historyLabel="Thing.h" index="11">
-<position/>
-</item>
-<item historyLabel="Thing.cpp" index="12">
-<position/>
-</item>
-<item historyLabel="MyRobot.cpp" index="13">
-<position/>
-</item>
-<item historyLabel="Thing.cpp" index="12">
-<position info="not_deleted" x="406" y="0"/>
-</item>
-<item historyLabel="MyRobot.cpp" index="13">
-<position/>
-</item>
-<item historyLabel="Thing.cpp" index="12">
-<position info="not_deleted" x="406" y="0"/>
-</item>
-<item historyLabel="Thing.h" index="14">
-<position/>
-</item>
-<item historyLabel="Schematic.h" index="15">
-<position/>
-</item>
-<item historyLabel="Thing.h" index="16">
-<position info="not_deleted" x="402" y="0"/>
-</item>
-<item historyLabel="MyRobot.cpp" index="17">
-<position/>
-</item>
-<item historyLabel="Thing.h" index="16">
-<position info="not_deleted" x="402" y="0"/>
-</item>
-<item historyLabel="Thing.cpp" index="18">
 <position info="not_deleted" x="249" y="0"/>
 </item>
-<item historyLabel="Thing.cpp" index="18">
-<position info="not_deleted" x="446" y="0"/>
+<item historyLabel="Thing.cpp" index="3">
+<position info="not_deleted" x="486" y="0"/>
 </item>
-<item historyLabel="Thing.h" index="16">
-<position info="not_deleted" x="1051" y="0"/>
-</item>
-<item historyLabel="Thing.h" index="16">
-<position info="not_deleted" x="402" y="0"/>
-</item>
-<item historyLabel="Schematic.h" index="15">
-<position info="not_deleted" x="75" y="24"/>
-</item>
-<item historyLabel="Thing.h" index="16">
-<position info="not_deleted" x="660" y="0"/>
-</item>
-<item historyLabel="Thing.cpp" index="18">
-<position info="not_deleted" x="493" y="0"/>
-</item>
-<item historyLabel="Thing.h" index="16">
-<position info="not_deleted" x="623" y="0"/>
-</item>
-<item historyLabel="MyRobot.cpp" index="17">
+<item historyLabel="MyRobot.cpp" index="6">
 <position info="not_deleted" x="484" y="0"/>
 </item>
-<item historyLabel="Thing.cpp" index="18">
+<item historyLabel="Thing.h" index="4">
+<position info="not_deleted" x="626" y="0"/>
+</item>
+<item historyLabel="MyRobot.cpp" index="7">
+<position info="not_deleted" x="484" y="0"/>
+</item>
+<item historyLabel="Schematic.h" index="8">
+<position info="not_deleted" x="250" y="0"/>
+</item>
+<item historyLabel="MyRobot.cpp" index="7">
+<position info="not_deleted" x="484" y="0"/>
+</item>
+<item historyLabel="Thing.cpp" index="9">
+<position info="not_deleted" x="762" y="0"/>
+</item>
+<item historyLabel="Thing.cpp" index="9">
+<position info="not_deleted" x="513" y="0"/>
+</item>
+<item historyLabel="Thing.h" index="4">
+<position info="not_deleted" x="1093" y="0"/>
+</item>
+<item historyLabel="MyRobot.cpp" index="7">
+<position info="not_deleted" x="311" y="0"/>
+</item>
+<item historyLabel="Thing.cpp" index="9">
+<position info="not_deleted" x="283" y="0"/>
+</item>
+<item historyLabel="Thing.h" index="4">
+<position info="not_deleted" x="1201" y="0"/>
+</item>
+<item historyLabel="Thing.cpp" index="9">
+<position info="not_deleted" x="283" y="0"/>
+</item>
+<item historyLabel="Thing.cpp" index="9">
+<position info="not_deleted" x="279" y="0"/>
+</item>
+<item historyLabel="Thing.h" index="4">
+<position info="not_deleted" x="811" y="0"/>
+</item>
+<item historyLabel="Thing.cpp" index="9">
+<position info="not_deleted" x="853" y="0"/>
+</item>
+<item historyLabel="Schematic.h" index="8">
+<position info="not_deleted" x="250" y="0"/>
+</item>
+<item historyLabel="Schematic.h" index="10">
 <position/>
 </item>
-<item historyLabel="Schematic.h" index="15">
-<position info="not_deleted" x="253" y="14"/>
+<item historyLabel="Schematic.h" index="8">
+<position info="not_deleted" x="250" y="0"/>
 </item>
-<item historyLabel="MyRobot.cpp" index="17">
-<position info="not_deleted" x="484" y="0"/>
+<item historyLabel="Thing.cpp" index="9">
+<position info="not_deleted" x="853" y="0"/>
 </item>
-<item historyLabel="Thing.cpp" index="18">
-<position info="not_deleted" x="636" y="8"/>
+<item historyLabel="MyRobot.cpp" index="7">
+<position info="not_deleted" x="311" y="0"/>
 </item>
-<item historyLabel="MyRobot.cpp" index="17">
-<position info="not_deleted" x="484" y="0"/>
+<item historyLabel="Thing.cpp" index="9">
+<position info="not_deleted" x="1015" y="0"/>
 </item>
-<item historyLabel="Schematic.h" index="15">
-<position info="not_deleted" x="285" y="13"/>
+<item historyLabel="MyRobot.cpp" index="7">
+<position info="not_deleted" x="311" y="0"/>
 </item>
-<item historyLabel="Thing.cpp" index="18">
-<position info="not_deleted" x="703" y="0"/>
+<item historyLabel="Schematic.h" index="8">
+<position info="not_deleted" x="137" y="0"/>
 </item>
-<item historyLabel="Schematic.h" index="15">
-<position info="not_deleted" x="253" y="14"/>
+<item historyLabel="Thing.cpp" index="9">
+<position info="not_deleted" x="1015" y="0"/>
 </item>
-<item historyLabel="Thing.cpp" index="18">
-<position info="not_deleted" x="703" y="0"/>
+<item historyLabel="Schematic.h" index="8">
+<position info="not_deleted" x="243" y="0"/>
 </item>
-<item active="true" historyLabel="Thing.cpp" index="18">
-<position info="not_deleted" x="705" y="0"/>
+<item active="true" historyLabel="Thing.cpp" index="9">
+<position info="not_deleted" x="1015" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -466,6 +458,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Schematic.h" tooltip="SwerveCode/Schematic.h">
+<persistable path="/SwerveCode/Schematic.h"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Schematic.h" tooltip="PIDTuning/Schematic.h">
 <persistable path="/PIDTuning/Schematic.h"/>
 </file>
@@ -477,9 +472,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Thing.h" tooltip="PIDTuning/Thing.h">
 <persistable path="/PIDTuning/Thing.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Schematic.h" tooltip="SwerveCode/Schematic.h">
-<persistable path="/SwerveCode/Schematic.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Swerve.h" tooltip="SwerveCode/Swerve.h">
 <persistable path="/SwerveCode/Swerve.h"/>
