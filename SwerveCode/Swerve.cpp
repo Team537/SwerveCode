@@ -2,6 +2,7 @@
 #include "Schematic.h"
 #include "cmath"
 #include "WPILib.h"
+#include <Gyro.h>
 
 void Swerve::init(void){
 	FrontLeftAngle.Disable();
@@ -30,7 +31,7 @@ void Swerve::init(void){
 }
 
 void Swerve::SetVariables(float Magnitude, float DirectionRadians, float Twist){
-	
+	gang = (((gyro.GetAngle())*PI)/180);
 	if (fabs(Magnitude) <= deadband){
 		Magnitude = 0;
 	}
@@ -41,10 +42,10 @@ void Swerve::SetVariables(float Magnitude, float DirectionRadians, float Twist){
 			Twist = 0;
 	}
 	SmartDashboard::PutNumber("Test", 16);
-	A = (cos(DirectionRadians)*Magnitude)-(Twist*LENGTH/2);
-	B = (cos(DirectionRadians)*Magnitude)+(Twist*LENGTH/2);
-	C = (sin(DirectionRadians)*Magnitude)-(Twist*WIDTH/2);
-	D = (sin(DirectionRadians)*Magnitude)+(Twist*WIDTH/2);
+	A = (cos((DirectionRadians-gang))*Magnitude)-(Twist*LENGTH/2);
+	B = (cos((DirectionRadians-gang))*Magnitude)+(Twist*LENGTH/2);
+	C = (sin((DirectionRadians-gang))*Magnitude)-(Twist*WIDTH/2);
+	D = (sin((DirectionRadians-gang))*Magnitude)+(Twist*WIDTH/2);
 	SmartDashboard::PutNumber("Test2", 537);
 	SmartDashboard::PutNumber("A", A);
 	SmartDashboard::PutNumber("B", B);
@@ -202,6 +203,7 @@ void Swerve::SetAngle(){
 		AFL.Set(0);
 	if (BackRightAngle.OnTarget())
 		ABR.Set(0);
+	
 	if (BackLeftAngle.OnTarget())
 		ABL.Set(0);
 	SmartDashboard::PutNumber("Front Right input", FLPot.PIDGet());
@@ -213,4 +215,5 @@ void Swerve::SetAngle(){
 	SmartDashboard::PutNumber("setpoint", FrontLeftAngle.GetSetpoint());
 	SmartDashboard::PutBoolean("PID Target", FrontLeftAngle.OnTarget());
 	SmartDashboard::PutNumber("FLPot volts", FLPot.GetVoltage());
+	SmartDashboard::PutNumber("Gyro Angle", gyro.GetAngle());
 }

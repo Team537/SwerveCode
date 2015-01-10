@@ -1,0 +1,24 @@
+#include <stdlib.h>
+#include <iostream>
+
+int main() {
+	for (int count = 0; count < 100; ++count)
+	{
+		if (count % 3 == 0 && count % 5 == 0)
+		{
+			std::cout<<count<<" FizzBuzz"<<endl;
+		}
+		else if (count % 3 == 0)
+		{
+			std::cout<<count<<" Fizz"<<endl;
+		}
+		else if (count % 5 == 0)
+		{
+			std::cout<<count<<" Buzz"<<endl;
+		}
+		else ()
+		{
+			std::cout<<count<<endl;
+		}
+	}
+}

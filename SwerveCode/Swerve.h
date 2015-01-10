@@ -94,7 +94,7 @@ private:
 	int lasttrigger;
 	bool toggle;
 	double FLpotfeedbackmax, FLPotfeedbackmin;
-	float ndrad,drad;
+	float ndrad,drad, gang;
 };
 
 #endif

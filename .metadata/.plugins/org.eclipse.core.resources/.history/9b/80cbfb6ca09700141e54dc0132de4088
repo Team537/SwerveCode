@@ -1,0 +1,26 @@
+#include <stdlib.h>
+#include <iostream>
+
+int main() {
+	for (int count = 0; i < 100; ++i)
+	{
+		if (i % 3 == 0 && i % 5 == 0)
+		{
+			std::cout << i << " FizzBuzz" << endl;
+		}
+		else if (i % 3 == 0)
+		{
+			std::cout << i << " Fizz"<<endl;
+		}
+		else if (i % 5 == 0)
+		{
+			std::cout << i << " Buzz"<<endl;
+		}
+		else ()
+		{
+			std::cout << i <<endl;
+		}
+	}
+	_getch();
+	return 1;
+}
