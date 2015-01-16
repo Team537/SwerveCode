@@ -1,0 +1,70 @@
+#include "DoublePot.h"
+#include "WPILib.h"
+#include "cmath"
+
+DoublePot::DoublePot(uint8_t moduleNumber, uint32_t channel, float min, float max) : AnalogChannel( moduleNumber, channel){
+	Min = min;
+	Max = max;
+	counter = 0;
+	lastval = 0;
+	lowbitflip = false;
+	topbitflip = false;
+}
+
+double DoublePot::PIDGet()
+{
+	double originalreading = AnalogChannel::PIDGet();
+	SmartDashboard::PutBoolean("Alternater", alternater);
+	SmartDashboard::PutNumber("originalreading", originalreading);
+	SmartDashboard::PutBoolean("topbitflip", topbitflip);
+	SmartDashboard::PutNumber("counter", counter);
+	SmartDashboard::PutBoolean("lowbitflip", lowbitflip);
+	
+	if (lowbitflip && originalreading > 800)
+	{
+		lowbitflip = false;
+		topbitflip = false;
+		alternater = alternater ? false : true;	
+		counter++;
+	}
+	else if (topbitflip && originalreading < 200)
+	{
+		lowbitflip = false;
+		topbitflip = false;
+		alternater = alternater ? false : true;	
+		counter++;
+	} 
+	lastval = originalreading;
+	topbit = originalreading >800;
+	lowbit = originalreading <200;
+
+	if (originalreading > 200 && originalreading < 500 && topbitflip)
+	{
+		topbitflip = false;
+	}
+	
+	if (originalreading > 500 && originalreading < 800 && lowbitflip)
+	{
+		lowbitflip = false;
+	}
+
+	if (originalreading > 800 && !topbitflip)
+	{
+		topbitflip = true;
+	}	
+	
+	if (originalreading < 200 && !lowbitflip)
+	{
+		lowbitflip = true;
+	}
+
+	
+	if (alternater)
+	{
+		return originalreading/2;
+	}
+	else
+	{
+		return ((originalreading/2) + ((Max-Min)/2));
+	}
+}

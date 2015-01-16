@@ -1,0 +1,19 @@
+#ifndef MANUALDRIVE_H
+#define MANUALDRIVE_H
+#include "schematic.h"
+#include <wpilib.h>
+
+class ManualDrive
+{
+private:
+	Victor SpeedOutput, AngleOutput;
+public:
+	ManualDrive(uint32_t SpeedPort, uint32_t AngPort):
+	{
+		SpeedOutput = new Victor(SpeedPort);
+		AngleOutput = new Victor(AngPort);
+	}
+	void Initialize();
+	void drive(float angle,float speed);
+};
+#endif

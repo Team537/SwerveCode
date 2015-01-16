@@ -1,9 +1,18 @@
 #ifndef SCHEMATIC_H
 #define SCHEMATIC_H
 
+//Constants
+#define JOYDEADBAND .1
+
 //Victors
-#define L_VICTOR 1,1
-#define R_VICTOR 1,2
+#define FLA_VICTOR 1,5
+#define FRA_VICTOR 1,6
+#define LA_VICTOR 1,2
+#define RA_VICTOR 1,3
+#define FLD_VICTOR 1,1
+#define FRD_VICTOR 1,8
+#define LD_VICTOR 1,4
+#define RD_VICTOR 1,7
 
 //Kintroller
 #define CONTROLLER 1

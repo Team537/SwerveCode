@@ -1,0 +1,12 @@
+#include "Schematic.h"
+#include "ManualDrive.h"
+
+void ManualDrive::drive(float angle, float speed)
+{
+	Angle.Set(angle);
+	Speed.Set(speed);
+	
+	SmartDashboard::PutNumber("Angle IO",angle);
+	SmartDashboard::PutNumber("Speed IO",speed);
+}
+

@@ -1,0 +1,34 @@
+#include "DoublePot.h"
+#include "WPILib.h"
+#include "cmath"
+
+DoublePot::DoublePot(uint8_t moduleNumber, uint32_t channel, float min, float max) : AnalogChannel( moduleNumber, channel){
+	Min = min;
+	Max = max;
+	counter = 0;
+}
+
+double DoublePot::PIDGet()
+{
+	double originalreading = AnalogChannel::PIDGet();
+	SmartDashboard::PutBoolean("Alternater", alternater);
+	SmartDashboard::PutNumber("originalreading", originalreading);
+	SmartDashboard::PutNumber("diff", fabs(lastval-originalreading));
+	SmartDashboard::PutNumber("counter", counter);
+	
+	if (fabs(lastval-originalreading) >= 200)
+	{
+		alternater = alternater ? false : true;	
+		counter++;
+	}
+		 
+	lastval = originalreading;
+	if (alternater)
+	{
+		return originalreading/2;
+	}
+	else
+	{
+		return ((originalreading/2) + ((Max-Min)/2));
+	}
+}

@@ -5,16 +5,14 @@
 #include <Gyro.h>
 
 void Swerve::init(void){
-	FrontLeftAngle.Disable();
-	AFR.Set(.25);
-	static bool bFirstTime = true;
-	inittimer.Start();
-	FLPot.GetVoltage();
+	//FrontLeftAngle.Disable();
+	FrontRightAngle.Disable();
+	AFR.Set(.5);
+	FRPot.GetVoltage();
 	if (inittimer.Get() >= 4){
 		inittimer.Stop();
-		AFL.Set(0);
-		bFirstTime = false;
-		FrontLeftAngle.Enable();
+		AFR.Set(0);
+		FrontRightAngle.Enable();
 	}
 	SmartDashboard::PutNumber("timer", inittimer.Get());
 	double FLpotfeedback = FRPot.GetValue();
@@ -27,7 +25,7 @@ void Swerve::init(void){
 	SmartDashboard::PutNumber("FLmax", FLpotfeedbackmax);
 	SmartDashboard::PutNumber("FLmin", FLPotfeedbackmin);
 	SmartDashboard::PutNumber("Potval", FLpotfeedback);
-	SmartDashboard::PutNumber("FLPot volts", FLPot.GetVoltage());
+	SmartDashboard::PutNumber("FLPot volts", FRPot.GetVoltage());
 }
 
 void Swerve::SetVariables(float Magnitude, float DirectionRadians, float Twist){
@@ -150,7 +148,7 @@ void Swerve::FindAngle(){
 void Swerve::SetpointToggle(int trigger)
 {
 
-	FrontRightAngle.Enable();
+	FrontLeftAngle.Enable();
 	/*if(trigger == 1 && lasttrigger == 0){
 		if(toggle == true)
 		{
@@ -165,20 +163,20 @@ void Swerve::SetpointToggle(int trigger)
 	}
 	lasttrigger = trigger;*/
 	if (trigger == 1){
-		FrontRightAngle.SetSetpoint(500);
+		FrontLeftAngle.SetSetpoint(500);
 	}
 	else
-		FrontRightAngle.SetSetpoint(150);
+		FrontLeftAngle.SetSetpoint(150);
 
-	SmartDashboard::PutNumber("Front Right input", FRPot.PIDGet());
-	SmartDashboard::PutNumber("Front Right output", AFR.Get());
-	SmartDashboard::PutNumber("Front Right Error", FrontRightAngle.GetError());
-	SmartDashboard::PutNumber("Front Right input 2", FRPot.PIDGet());
-	SmartDashboard::PutNumber("Front Right output 2", AFR.Get());
-	SmartDashboard::PutNumber("Front Right Error 2", FrontRightAngle.GetError());
-	SmartDashboard::PutNumber("setpoint", FrontRightAngle.GetSetpoint());
-	SmartDashboard::PutBoolean("PID Target", FrontRightAngle.OnTarget());
-	SmartDashboard::PutNumber("FLPot volts", FRPot.GetVoltage());
+	SmartDashboard::PutNumber("Front Left input", FLPot.PIDGet());
+	SmartDashboard::PutNumber("Front Left output", AFL.Get());
+	SmartDashboard::PutNumber("Front Left Error", FrontLeftAngle.GetError());
+	SmartDashboard::PutNumber("Front Left input 2", FLPot.PIDGet());
+	SmartDashboard::PutNumber("Front Left output 2", AFL.Get());
+	SmartDashboard::PutNumber("Front Left Error 2", FrontLeftAngle.GetError());
+	SmartDashboard::PutNumber("setpoint left", FrontLeftAngle.GetSetpoint());
+	SmartDashboard::PutBoolean("PID On Target", FrontLeftAngle.OnTarget());
+	SmartDashboard::PutNumber("FLPot volts", FLPot.GetVoltage());
 }
 
 void Swerve::JoystickAngle(float dirictionrad, float mag)

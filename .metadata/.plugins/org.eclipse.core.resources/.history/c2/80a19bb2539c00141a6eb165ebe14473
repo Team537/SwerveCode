@@ -1,0 +1,19 @@
+#ifndef DOUBLEPOT_H
+
+#include "Schematic.h"
+#include "WPILib.h"
+#include "AnalogChannel.h"
+
+class DoublePot : public AnalogChannel
+{
+public:
+	DoublePot(uint8_t moduleNumber, uint32_t channel, float min, float max); 
+	double PIDGet();
+private:
+	bool alternater;
+	double lastval;
+	float Min;
+	float Max;
+	int counter;
+};
+#endif

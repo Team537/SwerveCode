@@ -162,7 +162,19 @@ SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/CompressorManager.o : 
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/DoublePot.o : C:/Team537Code/SwerveCode/PIDTuning/DoublePot.cpp
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/MyRobot.o : C:/Team537Code/SwerveCode/PIDTuning/MyRobot.cpp
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/PIDValue.o : C:/Team537Code/SwerveCode/PIDTuning/PIDValue.cpp
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/SwerveModule.o : C:/Team537Code/SwerveCode/PIDTuning/SwerveModule.cpp
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -171,7 +183,10 @@ SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/Thing.o : C:/Team537Co
 
 
 OBJECTS_SimpleTemplate_partialImage = SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/CompressorManager.o \
+	 SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/DoublePot.o \
 	 SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/MyRobot.o \
+	 SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/PIDValue.o \
+	 SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/SwerveModule.o \
 	 SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/Thing.o
 
 SimpleTemplate_partialImage/$(MODE_DIR)/SimpleTemplate_partialImage.o : $(OBJECTS_SimpleTemplate_partialImage)
@@ -184,7 +199,8 @@ _clean :: SimpleTemplate_partialImage/$(MODE_DIR)/SimpleTemplate_partialImage_cl
 SimpleTemplate_partialImage/$(MODE_DIR)/SimpleTemplate_partialImage_clean : 
 	$(TRACE_FLAG)if [ -d "SimpleTemplate_partialImage" ]; then cd "SimpleTemplate_partialImage"; rm -rf $(MODE_DIR); fi
 
-DEP_FILES := SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/CompressorManager.d SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/MyRobot.d SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/Thing.d
+DEP_FILES := SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/CompressorManager.d SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/DoublePot.d SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/MyRobot.d \
+	 SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/PIDValue.d SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/SwerveModule.d SimpleTemplate_partialImage/$(MODE_DIR)/Objects/PIDTuning/Thing.d
 -include $(DEP_FILES)
 
 

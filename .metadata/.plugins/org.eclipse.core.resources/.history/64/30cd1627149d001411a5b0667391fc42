@@ -1,0 +1,71 @@
+#include "WPILib.h"
+#include "Schematic.h"
+#include "Thing.h"
+#include "CompressorManager.h"
+#include "SwerveModule.h"
+#include "PIDValue.h"
+class RobotDemo : public SimpleRobot
+{
+	
+	//Thing SpdSet;
+	//CompressorManager compress;
+	
+private:
+	SwerveModule *FrontLeftMod, *FrontRightMod, *BackLeftMod, *BackRightMod;
+	Joystick *Controller;
+	float AngleSetpoint;
+public:
+	RobotDemo()
+	
+	{
+		Controller = new Joystick(CONTROLLER);
+		PIDValue *FrontLeftAngleValues = new PIDValue(.004,0,.003, 40, 925, -.5,.5);
+		PIDValue *FrontRightAngleValues = new PIDValue(.004,0,0, 36, 937, -.5, .5);
+		PIDValue *BackLeftAngleValues = new PIDValue(.004,0,0,36,925,-.5,.5);
+		PIDValue *BackRightAngleValues = new PIDValue(-.004,-0.000001,-.002,36,925,-.5,.5);
+		FrontLeftMod = new SwerveModule(1,2,5,6,4, FrontLeftAngleValues, "FrontLeft");
+		FrontRightMod = new SwerveModule(8,6,1,2,3,FrontRightAngleValues,"FrontRight");
+		BackLeftMod = new SwerveModule(4,5,7,8,5,BackLeftAngleValues, "BackLeft");
+		BackRightMod = new SwerveModule(7,3,3,4,6,BackRightAngleValues, "BackRight");
+	} 
+	void Autonomous()
+	{
+		
+	}
+	
+	void OperatorControl()
+	{
+		FrontLeftMod->Initialize();
+		FrontRightMod->Initialize();
+		BackLeftMod->Initialize();
+		BackRightMod->Initialize();
+		
+		while (IsOperatorControl())
+		{
+			
+			//testing.Set(0.25);
+			//compress.checkCompressor();
+			//SpdSet.Setspeed(Controller.GetRawAxis(2), Controller.GetRawAxis(4), Controller.GetRawButton(1), Controller.GetRawButton(2), Controller.GetRawButton(6));
+			//FrontLeftMod.drive(Controller.GetRawAxis(1),Controller.GetRawAxis(2));
+			//FrontRightMod->drive(Controller->GetRawAxis(1),Controller->GetRawAxis(2));
+			//BackLeftMod->drive(Controller->GetRawAxis(1),Controller->GetRawAxis(2));
+			//FrontLeftMod->drive(Controller->GetMagnitude(),Controller->GetDirectionDegrees ());
+			if (Controller->GetRawButton(1) == 1){
+				AngleSetpoint = 150;
+			}
+			else {
+				AngleSetpoint = 500;
+			}
+			//FrontLeftMod->AutoDrive(AngleSetpoint);
+			//FrontRightMod->AutoDrive(AngleSetpoint);
+			//BackLeftMod->AutoDrive(AngleSetpoint);
+			BackRightMod->AutoDrive(AngleSetpoint);
+		}
+	}
+	
+	void Test() {
+
+	}
+};
+
+START_ROBOT_CLASS(RobotDemo);

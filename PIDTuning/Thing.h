@@ -17,8 +17,8 @@ class Thing
 public:
 	//void SetVariables(float Magnitude, float DirectionRadians, float Twist);
 	Thing(void):
-		LDVictor(L_VICTOR),
-		RDVictor(R_VICTOR),
+		LDVictor(LD_VICTOR),
+		RDVictor(RD_VICTOR),
 		LEnc(LENC,true,CounterBase::k4X),
 		REnc(RENC,true,CounterBase::k4X),
 		LSpd( LP,0, 0, &LEnc, &LDVictor),

@@ -1,0 +1,18 @@
+#ifndef MANUALDRIVE_H
+#define MANUALDRIVE_H
+#include "schematic.h"
+#include <wpilib.h>
+
+class ManualDrive
+{
+private:
+	Victor Speed, Angle;
+public:
+	ManualDrive(int SpeedPort, int AngPort):
+		Speed(1,SpeedPort),
+		Angle(1,AngPort){
+		SmartDashboard::PutData("Speed Victor", Speed);
+	}
+	void drive(float angle,float speed);
+};
+#endif

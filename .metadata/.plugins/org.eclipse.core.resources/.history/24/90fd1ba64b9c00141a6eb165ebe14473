@@ -1,0 +1,20 @@
+#ifndef DOUBLEPOT_H
+#define DOUBLEPOT_H
+
+class DoublePot : public AnalogChannel
+{
+public:
+	DoublePot(uint8_t moduleNumber, uint32_t channel, float min, float max): AnalogChannel(moduleNumber, channel)
+	{	
+		Min = min;
+		Max = max;
+	}
+	double PIDGet();
+private:
+	bool alternater;
+	double lastval;
+	float Min;
+	float Max;
+	
+};
+#endif

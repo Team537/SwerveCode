@@ -1,0 +1,14 @@
+#ifndef MANUALDRIVE_H
+#define MANUALDRIVE_H
+#include "schematic.h"
+#include <wpilib.h>
+
+class ManualDrive
+{
+private:
+	Victor Speed, Angle;
+public:
+	ManualDrive(void):Speed(LD_VICTOR),Angle(LA_VICTOR){}
+	void drive(float angle,float speed);
+};
+#endif

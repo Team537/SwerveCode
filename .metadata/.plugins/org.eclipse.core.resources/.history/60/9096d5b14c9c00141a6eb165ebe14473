@@ -1,0 +1,33 @@
+#ifndef SWERVEMODULE_H
+#define SWERVEMODULE_H
+#include "schematic.h"
+#include "PIDValue.h"
+#include <wpilib.h>
+
+class SwerveModule
+{
+private:
+	Victor *SpeedOutput, *AngleOutput;
+	Encoder *SpeedEncoder;
+	AnalogChannel *AnglePotentiometer;
+	double potfeedbackmin, potfeedbackmax;
+	PIDController *PIDAngle;
+	string Name;
+public:
+	SwerveModule(uint32_t SpeedPort, uint32_t AngPort, uint32_t EncPort1, uint32_t EncPort2,uint32_t PotPort, PIDValue *AnglePIDValues, string name)
+	{
+		SpeedOutput = new Victor(SpeedPort);
+		SpeedEncoder = new Encoder(EncPort1,EncPort2);
+		AngleOutput = new Victor(AngPort);
+		AnglePotentiometer = new AnalogChannel(PotPort);
+		Name = name;
+		PIDAngle = new PIDController(AnglePIDValues->P,AnglePIDValues->I,AnglePIDValues->D,AnglePotentiometer,AngleOutput);
+		potfeedbackmin = 100;
+		PIDAngle->SetContinuous(true);
+		
+	}
+	void Initialize();
+	void drive(float angle,float speed);
+	void AutoDrive(float Angle);
+};
+#endif
