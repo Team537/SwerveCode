@@ -15,6 +15,8 @@ private:
 	double potfeedbackmin, potfeedbackmax;
 	PIDController *PIDAngle;
 	string Name;
+	float range,MIN,MAX;
+	float OldSetpoint;
 public:
 	SwerveModule(uint32_t SpeedPort, uint32_t AngPort, uint32_t EncPort1, uint32_t EncPort2,uint32_t PotPort, PIDValue *AnglePIDValues, string name, float offset)
 	{
@@ -26,14 +28,24 @@ public:
 		PIDAngle = new PIDController(AnglePIDValues->P,AnglePIDValues->I,AnglePIDValues->D,AnglePotentiometer,AngleOutput);
 		PIDAngle->SetInputRange(AnglePIDValues->MINInput,AnglePIDValues->MAXInput);
 		PIDAngle->SetOutputRange(AnglePIDValues->MINOutput, AnglePIDValues->MaxOutput);
-		PIDAngle->SetAbsoluteTolerance(10);
+		PIDAngle->SetAbsoluteTolerance(20);
 		potfeedbackmin = 100;
-		PIDAngle->SetContinuous(true);
+		PIDAngle->SetContinuous(false);
+		MIN = AnglePIDValues->MINInput;
+		MAX = AnglePIDValues->MAXInput;
+		toggle = true;
+		lasttrigger = 0;
+		range = MAX - MIN;
+		OldSetpoint = 450;
 		
 	}
 	void Initialize();
-	void drive(float angle,float speed);
+	void drive(float angle, float speed);
 	void AutoDrive(float Angle);
 	void PIDAdjust(float P, float I, float D);
+	bool AtAngle();
+	bool toggle;
+	void ReadPot();
+	int lasttrigger;
 };
 #endif

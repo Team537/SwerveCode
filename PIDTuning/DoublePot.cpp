@@ -14,23 +14,33 @@ DoublePot::DoublePot(uint8_t moduleNumber, uint32_t channel, float min, float ma
 
 double DoublePot::PIDGet()
 {
-	double originalreading = AnalogChannel::GetAverageValue();
+	double originalreading = AnalogChannel::PIDGet();
 	double delta = originalreading - lastval;
 	double range = Max - Min;
 	double tmpIntPart, tmpAccum;
 	bool deltaIsPositive = delta > 0;
-
+	
+	if (originalreading > Max || originalreading <Min)
+	{
+		return lastval;
+	}
+	lastval = originalreading;
+	originalreading -= OFFSet;
+	if (originalreading < Min)
+		originalreading += range;
+	return originalreading;
+	
 	SmartDashboard::PutBoolean("Alternater", alternater);
 	SmartDashboard::PutNumber("originalreading", originalreading);
 	SmartDashboard::PutNumber("avgbits", AnalogChannel::GetAverageBits());
 	SmartDashboard::PutNumber("accum", accum);
 
 	// Update the accumulator with the current change in angle
-	accum += delta;
+	//accum += delta;
 
 	// If we've seen a big jump in angle (half range or more)
 	// adjust the accumulator for the sawtooth step
-	if(fabs(delta) > range/2)
+/*	if(fabs(delta) > range/2)
 	{
 		if (deltaIsPositive)
 			accum -= range;
@@ -39,23 +49,25 @@ double DoublePot::PIDGet()
 	}
 	
 	lastdeltasign = deltaIsPositive;
-	lastval = originalreading;
+	lastval = originalreading;*/
 	
 	// At this point the accumulator could be a very large absolute value
 	// Use a modulus operation to get back to the expected range of values
 	// Note that we divide by (range*2) to compensate for 2:1 pot to motor ratio
 	// then we multiply the fractional part by the range to get back to the
 	// expected range of values.
-	tmpAccum = modf(accum/(range*2), &tmpIntPart) * range;
+	//tmpAccum = modf(accum/(range*2), &tmpIntPart) * range;
 	
 	// We want to always return positive values, so if we're currently negative,
 	// add the range value to the output value before returning.
-	if (tmpAccum < 0)
+	/*if (tmpAccum < 0)
 		tmpAccum += range;
 	tmpAccum += Min;
 	tmpAccum -= OFFSet;
 	if(tmpAccum < Min)
 		tmpAccum +=range;
 
-	return(tmpAccum);
+	return(tmpAccum);*/
+	
+
 }

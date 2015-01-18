@@ -2,7 +2,7 @@
 #define SCHEMATIC_H
 
 //Constants
-#define JOYDEADBAND .1
+#define JOYDEADBAND .25
 
 //Victors
 #define FLA_VICTOR 1,5
