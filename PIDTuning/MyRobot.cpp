@@ -61,7 +61,7 @@ public:
 			//FrontRightMod->drive(Controller->GetRawAxis(1),Controller->GetRawAxis(2));
 			//BackRightMod->drive(Controller->GetRawAxis(1),Controller->GetRawAxis(2));
 			//BackLeftMod->drive(Controller->GetRawAxis(1),Controller->GetRawAxis(2));
-			
+
 		/*	if (Controller->GetRawButton(1) == 1){
 				AngleSetpoint = 650;
 			}
@@ -72,24 +72,24 @@ public:
 			{
 				NAngleSetpoint = Controller->GetDirectionDegrees();
 				SmartDashboard::PutNumber("RawDegrees", Controller->GetRawAxis(2));
-				
+
 				if (Controller->GetRawAxis(2) < 0)
 				{
 					NAngleSetpoint += 90;
 					sign = 1;
 				}
-				else if (NAngleSetpoint > 0) 
+				else if (NAngleSetpoint > 0)
 				{
 					sign = -1;
 					NAngleSetpoint -= 90;
-					
+
 				}
 				else
 				{
 					sign = -1;
 					NAngleSetpoint += 270;
-				}				
-				
+				}
+
 				SmartDashboard::PutNumber("NAngleSetpoint", NAngleSetpoint);
 				AngleSetpoint = NAngleSetpoint/180;
 			}
@@ -104,7 +104,7 @@ public:
 					FrontRightMod->drive(Controller->GetRawAxis(1),-1*sign*Controller->GetMagnitude());
 					BackRightMod->drive(Controller->GetRawAxis(1),sign* Controller->GetMagnitude());
 					BackLeftMod->drive(Controller->GetRawAxis(1), -1*sign*Controller->GetMagnitude());
-				} 
+				}
 				else
 				{
 					FrontLeftMod->drive(0,0);
@@ -112,11 +112,11 @@ public:
 					BackRightMod->drive(0,0);
 					BackLeftMod->drive(0,0);
 				}
-			
+
 		/*	AngleSetpoint = Controller->GetDirectionDegrees();
 			if (AngleSetpoint < 0)
 				AngleSetpoint += 360;
-			
+
 			NAngleSetpoint = (AngleSetpoint / 360) * 889 + 40;*/
 			SmartDashboard::PutNumber("Angle Setpoint", AngleSetpoint);
 			SmartDashboard::PutNumber("N Angle Setpoint", NAngleSetpoint);
@@ -131,7 +131,7 @@ public:
 				{
 					p-=.0001;
 				}
-				if (Controller->GetRawButton(8)==1)  
+				if (Controller->GetRawButton(8)==1)
 				{
 					p+=.0001;
 				}
@@ -139,7 +139,7 @@ public:
 				{
 					i-=.00001;
 				}
-				if (Controller->GetRawButton(10)==1)  
+				if (Controller->GetRawButton(10)==1)
 				{
 					i+=.00001;
 				}
@@ -147,7 +147,7 @@ public:
 				{
 					d-=.0001;
 				}
-				if (Controller->GetRawButton(12)==1)  
+				if (Controller->GetRawButton(12)==1)
 				{
 					d+=.0001;
 				}
@@ -155,7 +155,7 @@ public:
 				newtime.Stop();
 				newtime.Reset();
 				newtime.Start();
-				//FrontLeftMod->PIDAdjust(p,i,d);			
+				//FrontLeftMod->PIDAdjust(p,i,d);
 				}*/
 		}
 	}
